@@ -10,6 +10,9 @@ import UIKit
 import GoogleMaps
 
 class ViewController: UIViewController, GMSMapViewDelegate {
+    
+    // marker is modified in mapView func
+    let infoMarker = GMSMarker()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,10 +39,17 @@ class ViewController: UIViewController, GMSMapViewDelegate {
       mapView.delegate = self
       self.view = mapView
     }
-
-    func mapView(_ mapView: GMSMapView, didTapPOIWithPlaceID placeID: String,
-                 name: String, location: CLLocationCoordinate2D) {
-      print("You tapped \(name): \(placeID), \(location.latitude)/\(location.longitude)")
+    
+    func mapView(_ mapView: GMSMapView, didTapPOIWithPlaceID placeID: String, name: String, location: CLLocationCoordinate2D) {
+//      print("You tapped \(name): \(placeID), \(location.latitude)/\(location.longitude)")
+        
+        infoMarker.snippet = placeID
+        infoMarker.position = location
+        infoMarker.title = name
+        infoMarker.opacity = 0;
+        infoMarker.infoWindowAnchor.y = 1
+        infoMarker.map = mapView
+        mapView.selectedMarker = infoMarker
     }
 
 }

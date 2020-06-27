@@ -9,7 +9,7 @@
 import UIKit
 import GoogleMaps
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, GMSMapViewDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +28,19 @@ class ViewController: UIViewController {
         marker.map = mapView
     }
 
+    override func loadView() {
+      let camera = GMSCameraPosition.camera(withLatitude: 47.603,
+                                            longitude:-122.331,
+                                            zoom:14)
+      let mapView = GMSMapView.map(withFrame: .zero, camera: camera)
+      mapView.delegate = self
+      self.view = mapView
+    }
+
+    func mapView(_ mapView: GMSMapView, didTapPOIWithPlaceID placeID: String,
+                 name: String, location: CLLocationCoordinate2D) {
+      print("You tapped \(name): \(placeID), \(location.latitude)/\(location.longitude)")
+    }
 
 }
 

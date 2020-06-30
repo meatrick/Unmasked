@@ -74,13 +74,27 @@ class ViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDel
     func mapView(_ mapView: GMSMapView, didTapPOIWithPlaceID placeID: String, name: String, location: CLLocationCoordinate2D) {
       print("You tapped \(name): \(placeID), \(location.latitude)/\(location.longitude)")
         
-        infoMarker.snippet = placeID
-        infoMarker.position = location
-        infoMarker.title = name
-        infoMarker.opacity = 0;
-        infoMarker.infoWindowAnchor.y = 1
-        infoMarker.map = mapView
-        mapView.selectedMarker = infoMarker
+//        infoMarker.snippet = placeID
+//        infoMarker.position = location
+//        infoMarker.title = name
+//        infoMarker.opacity = 0;
+//        infoMarker.infoWindowAnchor.y = 1
+//        infoMarker.map = mapView
+//        mapView.selectedMarker = infoMarker
+        
+        let popUpVc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "InfoNavController") as! InfoNavController
+        self.addChild(popUpVc)
+        //Transition from bottom
+        let transition = CATransition()
+        transition.duration = 0.5
+        transition.type = CATransitionType.push
+        transition.subtype = CATransitionSubtype.fromTop
+        view.window!.layer.add(transition, forKey: kCATransition)
+
+        popUpVc.view.frame = self.view.frame
+        self.view.addSubview(popUpVc.view)
+        popUpVc.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
+        popUpVc.didMove(toParent: self)
     }
 
       // Handle incoming location events.

@@ -60,10 +60,16 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-    <key>LSApplicationQueriesSchemes</key>
-    <array>
-        <string>googlechromes</string>
-        <string>comgooglemaps</string>
-    </array>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>googlechromes</string>
+		<string>comgooglemaps</string>
+	</array>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Unmasked would like to use your location</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Unmasked would like to use your location</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Unmasked would like to use your location</string>
 </dict>
 </plist>

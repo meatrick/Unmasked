@@ -46,26 +46,16 @@ class ViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDel
         locationManager.delegate = self
 
         placesClient = GMSPlacesClient.shared()
-        
-        // Creates a marker in the center of the map.
-        let marker = GMSMarker()
-        marker.position = CLLocationCoordinate2D(latitude: -33.86, longitude: 151.20)
-        marker.title = "Sydney"
-        marker.snippet = "Australia"
-        marker.map = mapView
     }
 
     override func loadView() {
-      let camera = GMSCameraPosition.camera(withLatitude: 47.603,
-                                            longitude:-122.331,
-                                            zoom:14)
+      let camera = GMSCameraPosition.camera(withLatitude: 47.603, longitude:-122.331, zoom:14)
       mapView = GMSMapView.map(withFrame: .zero, camera: camera)
       mapView.delegate = self
       self.view = mapView
     }
     
     func mapView(_ mapView: GMSMapView, didTapPOIWithPlaceID placeID: String, name: String, location: CLLocationCoordinate2D) {
-//      print("You tapped \(name): \(placeID), \(location.latitude)/\(location.longitude)")
         
         infoMarker.snippet = placeID
         infoMarker.position = location
@@ -80,28 +70,14 @@ class ViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDel
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let location: CLLocation = locations.last!
         print("Location: \(location)")
-
-//        let camera = GMSCameraPosition.camera(withLatitude: location.coordinate.latitude,
-//                                              longitude: location.coordinate.longitude,
-//                                              zoom: zoomLevel)
-//
-//        if mapView.isHidden {
-//            mapView.isHidden = false
-//            mapView.camera = camera
-//        } else {
-//            mapView.animate(to: camera)
-//        }
-
-//        let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
         
         let camera = GMSCameraPosition.camera(withLatitude: location.coordinate.latitude, longitude: location.coordinate.longitude, zoom: 13.0)
         
+        // This is where the blue dot is updated
         mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
         mapView.isMyLocationEnabled = true
         self.view = mapView
         locationManager.stopUpdatingLocation()
-        
-        
       }
 
       // Handle authorization for the location manager.
@@ -118,8 +94,6 @@ class ViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDel
         case .authorizedAlways: fallthrough
         case .authorizedWhenInUse:
           print("Location status is OK.")
-    //      mapView.ismyLocationEnabled = true
-    //      mapView.settings.myLocationButton = true
         @unknown default:
           fatalError()
         }
@@ -130,36 +104,4 @@ class ViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDel
         locationManager.stopUpdatingLocation()
         print("Error: \(error)")
       }
-
-//    //Location Manager delegates
-//    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-//
-//        let location = locations.last
-//
-//        let camera = GMSCameraPosition.camera(withLatitude: (location?.coordinate.latitude)!, longitude: (location?.coordinate.longitude)!, zoom: 17.0)
-//
-//        self.mapView?.animate(to: camera)
-//
-//        //Finally stop updating location otherwise it will come again and again in this delegate
-//        self.locationManager.stopUpdatingLocation()
-//
-//    }
 }
-
-//extension ViewController {
-//
-//    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
-//        if status == .authorizedWhenInUse {
-//            locationManager.startUpdatingLocation()
-//            mapView.isMyLocationEnabled = true
-//            mapView.settings.myLocationButton = true
-//        }
-//    }
-//        func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-//        if let location = locations.first {
-//            mapView.camera = GMSCameraPosition(target: location.coordinate, zoom: 20, bearing: 0, viewingAngle: 0)
-//            locationManager.stopUpdatingLocation()
-//        }
-//    }
-//}
-

@@ -12,7 +12,7 @@ import GooglePlaces
 
 class ViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDelegate {
     
-    // marker is modified in mapView func
+    // marker is modified in didTapPOI func
     let infoMarker = GMSMarker()
     
     // for iPhone location
@@ -29,33 +29,50 @@ class ViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDel
         // coordinate -33.86,151.20 at zoom level 6.
         let camera = GMSCameraPosition.camera(withLatitude: -33.86, longitude: 151.20, zoom: 6.0)
         mapView = GMSMapView.map(withFrame: self.view.frame, camera: camera)
-        self.view.addSubview(mapView)
+//        self.view.addSubview(mapView)
         
-        // location services
+        
+//      Marker test
+        let position = CLLocationCoordinate2D(latitude: 51.5, longitude: -0.127)
+        let london = GMSMarker(position: position)
+        london.title = "London"
+        london.snippet = "Population: 8,174,100"
+        london.map = mapView
+        
+        
+//      location services
         mapView.settings.compassButton = true
         mapView.isMyLocationEnabled = true
         mapView.settings.myLocationButton = true
+
         
-    
-        // Initialize the location manager.
+//      Initialize the location manager.
         locationManager = CLLocationManager()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
         locationManager.distanceFilter = 50
         locationManager.startUpdatingLocation()
         locationManager.delegate = self
-
+        
         placesClient = GMSPlacesClient.shared()
-    }
+        
+}
 
     override func loadView() {
-      let camera = GMSCameraPosition.camera(withLatitude: 47.603, longitude:-122.331, zoom:14)
+      let camera = GMSCameraPosition.camera(withLatitude: 47.603,
+                                            longitude:-122.331,
+                                            zoom:14)
       mapView = GMSMapView.map(withFrame: .zero, camera: camera)
       mapView.delegate = self
       self.view = mapView
     }
     
+    func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
+      print("You tapped at \(coordinate.latitude), \(coordinate.longitude)")
+    }
+    
     func mapView(_ mapView: GMSMapView, didTapPOIWithPlaceID placeID: String, name: String, location: CLLocationCoordinate2D) {
+      print("You tapped \(name): \(placeID), \(location.latitude)/\(location.longitude)")
         
         infoMarker.snippet = placeID
         infoMarker.position = location
@@ -65,18 +82,21 @@ class ViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDel
         infoMarker.map = mapView
         mapView.selectedMarker = infoMarker
     }
-    
+
       // Handle incoming location events.
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let location: CLLocation = locations.last!
         print("Location: \(location)")
         
         let camera = GMSCameraPosition.camera(withLatitude: location.coordinate.latitude, longitude: location.coordinate.longitude, zoom: 13.0)
-        
-        // This is where the blue dot is updated
-        mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
+
+//      // This is where the blue dot is updated
+//        mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
+        mapView.camera = camera
         mapView.isMyLocationEnabled = true
         self.view = mapView
+        mapView.settings.myLocationButton = true
+        mapView.delegate = self
         locationManager.stopUpdatingLocation()
       }
 
@@ -104,4 +124,7 @@ class ViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDel
         locationManager.stopUpdatingLocation()
         print("Error: \(error)")
       }
+
 }
+
+

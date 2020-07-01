@@ -18,8 +18,9 @@
 		AFA0F72424A6D5D1002C94B1 /* StoryBoard1UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA0F72324A6D5D1002C94B1 /* StoryBoard1UITests.swift */; };
 		AFA0F77824A80183002C94B1 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = AFA0F77724A80183002C94B1 /* Podfile */; };
 		AFA0F78024ABDBE2002C94B1 /* NewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA0F77F24ABDBE2002C94B1 /* NewController.swift */; };
-		AFA0F78224ABE52E002C94B1 /* InfoPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA0F78124ABE52E002C94B1 /* InfoPage.swift */; };
 		AFA0F78624ABEEB1002C94B1 /* InfoNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA0F78524ABEEB1002C94B1 /* InfoNavController.swift */; };
+		AFA0F79024AD37ED002C94B1 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA0F78F24AD37ED002C94B1 /* InfoViewController.swift */; };
+		AFA0F79224AD383C002C94B1 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA0F79124AD383C002C94B1 /* InfoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,8 +59,9 @@
 		AFA0F72524A6D5D1002C94B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AFA0F77724A80183002C94B1 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		AFA0F77F24ABDBE2002C94B1 /* NewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewController.swift; sourceTree = "<group>"; };
-		AFA0F78124ABE52E002C94B1 /* InfoPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoPage.swift; sourceTree = "<group>"; };
 		AFA0F78524ABEEB1002C94B1 /* InfoNavController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoNavController.swift; sourceTree = "<group>"; };
+		AFA0F78F24AD37ED002C94B1 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		AFA0F79124AD383C002C94B1 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		F2CC4E73D2124123B1E68EE7 /* Pods-StoryBoard1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StoryBoard1.release.xcconfig"; path = "Target Support Files/Pods-StoryBoard1/Pods-StoryBoard1.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -133,11 +135,12 @@
 			isa = PBXGroup;
 			children = (
 				AFA0F70124A6D5CF002C94B1 /* AppDelegate.swift */,
+				AFA0F79124AD383C002C94B1 /* InfoView.swift */,
 				AFA0F77F24ABDBE2002C94B1 /* NewController.swift */,
-				AFA0F78124ABE52E002C94B1 /* InfoPage.swift */,
 				AFA0F70324A6D5CF002C94B1 /* SceneDelegate.swift */,
 				AFA0F70524A6D5CF002C94B1 /* ViewController.swift */,
 				AFA0F70724A6D5CF002C94B1 /* Main.storyboard */,
+				AFA0F78F24AD37ED002C94B1 /* InfoViewController.swift */,
 				AFA0F78524ABEEB1002C94B1 /* InfoNavController.swift */,
 				AFA0F70A24A6D5D1002C94B1 /* Assets.xcassets */,
 				AFA0F70C24A6D5D1002C94B1 /* LaunchScreen.storyboard */,
@@ -340,12 +343,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AFA0F78224ABE52E002C94B1 /* InfoPage.swift in Sources */,
 				AFA0F78024ABDBE2002C94B1 /* NewController.swift in Sources */,
 				AFA0F70624A6D5CF002C94B1 /* ViewController.swift in Sources */,
 				AFA0F78624ABEEB1002C94B1 /* InfoNavController.swift in Sources */,
+				AFA0F79024AD37ED002C94B1 /* InfoViewController.swift in Sources */,
 				AFA0F70224A6D5CF002C94B1 /* AppDelegate.swift in Sources */,
 				AFA0F70424A6D5CF002C94B1 /* SceneDelegate.swift in Sources */,
+				AFA0F79224AD383C002C94B1 /* InfoView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

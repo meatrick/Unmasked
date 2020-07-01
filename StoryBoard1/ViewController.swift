@@ -22,6 +22,8 @@ class ViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDel
     var placesClient: GMSPlacesClient!
     var zoomLevel: Float = 15.0
     
+    @IBAction func myUnwindAction(unwindSegue: UIStoryboardSegue) {}
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -82,19 +84,24 @@ class ViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDel
 //        infoMarker.map = mapView
 //        mapView.selectedMarker = infoMarker
         
-        let popUpVc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "InfoNavController") as! InfoNavController
-        self.addChild(popUpVc)
-        //Transition from bottom
-        let transition = CATransition()
-        transition.duration = 0.5
-        transition.type = CATransitionType.push
-        transition.subtype = CATransitionSubtype.fromTop
-        view.window!.layer.add(transition, forKey: kCATransition)
-
-        popUpVc.view.frame = self.view.frame
-        self.view.addSubview(popUpVc.view)
-        popUpVc.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
-        popUpVc.didMove(toParent: self)
+        // transition to information page
+//        let popUpVc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NewController") as! NewController
+//        self.addChild(popUpVc)
+//        //Transition from bottom
+//        let transition = CATransition()
+//        transition.duration = 0.33
+//        transition.type = CATransitionType.push
+//        transition.subtype = CATransitionSubtype.fromTop
+//        view.window!.layer.add(transition, forKey: kCATransition)
+//
+//        popUpVc.view.frame = self.view.frame
+//        self.view.addSubview(popUpVc.view)
+//        popUpVc.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
+//        popUpVc.didMove(toParent: self)
+        
+        // Use segue to do transition
+        performSegue(withIdentifier: "showInfoPage", sender: nil)
+        
     }
 
       // Handle incoming location events.

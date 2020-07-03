@@ -12,6 +12,8 @@ import GooglePlaces
 
 class ViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDelegate {
     
+    // MARK: Properties
+    
     // marker is modified in didTapPOI func
     let infoMarker = GMSMarker()
     
@@ -22,7 +24,28 @@ class ViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDel
     var placesClient: GMSPlacesClient!
     var zoomLevel: Float = 15.0
     
+    // POI data to pass to info page view controller
+    var placeID: String?
+    var name: String?
+    var location: CLLocationCoordinate2D?
+    
     @IBAction func myUnwindAction(unwindSegue: UIStoryboardSegue) {}
+    
+    
+    // MARK: Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? NewController
+        {
+            print(placeID ?? "placeID not set in ViewController")
+            vc.placeID = placeID
+            vc.name = name
+            vc.location = location
+        }
+    }
+    
+    
+    // MARK: View Loading Methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,14 +55,6 @@ class ViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDel
         let camera = GMSCameraPosition.camera(withLatitude: -33.86, longitude: 151.20, zoom: 6.0)
         mapView = GMSMapView.map(withFrame: self.view.frame, camera: camera)
 //        self.view.addSubview(mapView)
-        
-        
-//      Marker test
-        let position = CLLocationCoordinate2D(latitude: 51.5, longitude: -0.127)
-        let london = GMSMarker(position: position)
-        london.title = "London"
-        london.snippet = "Population: 8,174,100"
-        london.map = mapView
         
         
 //      location services
@@ -76,35 +91,21 @@ class ViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDel
     func mapView(_ mapView: GMSMapView, didTapPOIWithPlaceID placeID: String, name: String, location: CLLocationCoordinate2D) {
       print("You tapped \(name): \(placeID), \(location.latitude)/\(location.longitude)")
         
-//        infoMarker.snippet = placeID
-//        infoMarker.position = location
-//        infoMarker.title = name
-//        infoMarker.opacity = 0;
-//        infoMarker.infoWindowAnchor.y = 1
-//        infoMarker.map = mapView
-//        mapView.selectedMarker = infoMarker
-        
-        // transition to information page
-//        let popUpVc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NewController") as! NewController
-//        self.addChild(popUpVc)
-//        //Transition from bottom
-//        let transition = CATransition()
-//        transition.duration = 0.33
-//        transition.type = CATransitionType.push
-//        transition.subtype = CATransitionSubtype.fromTop
-//        view.window!.layer.add(transition, forKey: kCATransition)
-//
-//        popUpVc.view.frame = self.view.frame
-//        self.view.addSubview(popUpVc.view)
-//        popUpVc.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
-//        popUpVc.didMove(toParent: self)
+        // update class properties for navigation
+        self.placeID = placeID
+        self.name = name
+        self.location = location
         
         // Use segue to do transition
         performSegue(withIdentifier: "showInfoPage", sender: nil)
         
     }
+    
+    
+    
+    // MARK: Location Methods
 
-      // Handle incoming location events.
+    // Handle incoming location events.
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let location: CLLocation = locations.last!
         print("Location: \(location)")

@@ -52,8 +52,8 @@ class ViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDel
         // Do any additional setup after loading the view.
         // Create a GMSCameraPosition that tells the map to display the
         // coordinate -33.86,151.20 at zoom level 6.
-        let camera = GMSCameraPosition.camera(withLatitude: -33.86, longitude: 151.20, zoom: 6.0)
-        mapView = GMSMapView.map(withFrame: self.view.frame, camera: camera)
+//        let camera = GMSCameraPosition.camera(withLatitude: -33.86, longitude: 151.20, zoom: 6.0)
+//        mapView = GMSMapView.map(withFrame: self.view.frame, camera: camera)
 //        self.view.addSubview(mapView)
         
         
@@ -79,9 +79,7 @@ class ViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDel
 
     
     override func loadView() {
-      let camera = GMSCameraPosition.camera(withLatitude: 47.603,
-                                            longitude:-122.331,
-                                            zoom:14)
+      let camera = GMSCameraPosition.camera(withLatitude: 47.603, longitude:-122.331, zoom:14)
       mapView = GMSMapView.map(withFrame: .zero, camera: camera)
       mapView.delegate = self
       self.view = mapView
@@ -119,9 +117,11 @@ class ViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDel
 //        mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
         mapView.camera = camera
         mapView.isMyLocationEnabled = true
-        self.view = mapView
+//        self.view = mapView
         mapView.settings.myLocationButton = true
         mapView.delegate = self
+        let target = CLLocationCoordinate2D(latitude: +34.868, longitude: -118.208)
+        mapView.camera = GMSCameraPosition.camera(withTarget: target, zoom: 6)
         locationManager.stopUpdatingLocation()
       }
 
@@ -165,9 +165,9 @@ class ViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDel
       autocompleteController.placeFields = fields
 
       // Specify a filter.
-      let filter = GMSAutocompleteFilter()
-      filter.type = .address
-      autocompleteController.autocompleteFilter = filter
+//      let filter = GMSAutocompleteFilter()
+//      filter.type = .address
+//      autocompleteController.autocompleteFilter = filter
 
       // Display the autocomplete view controller.
       present(autocompleteController, animated: true, completion: nil)
@@ -175,14 +175,37 @@ class ViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDel
 
     // Add a button to the view.
     func makeButton() {
-        let btnLaunchAc = UIButton(frame: CGRect(x: 5, y: 5, width: 300, height: 35))
-        btnLaunchAc.backgroundColor = .blue
+        let btnLaunchAc = UIButton(type: .roundedRect)
+        btnLaunchAc.backgroundColor = .systemBackground
         btnLaunchAc.setTitle("Search...", for: .normal)
         btnLaunchAc.addTarget(self, action: #selector(autocompleteClicked), for: .touchUpInside)
+        
+        //Add padding around text
+        btnLaunchAc.titleEdgeInsets = UIEdgeInsets(top: -10,left: -10,bottom: -10,right: -10)
+        btnLaunchAc.contentEdgeInsets = UIEdgeInsets(top: 5,left: 5,bottom: 5,right: 5)
+        
         self.view.addSubview(btnLaunchAc)
+        
+        //Button Constraints:
+        btnLaunchAc.translatesAutoresizingMaskIntoConstraints = false
+
+        //To anchor above the tab bar on the bottom of the screen:
+        let bottomButtonConstraint = btnLaunchAc.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor , constant: 5)
+
+        //edge of the screen in InterfaceBuilder:
+        let margins = view.layoutMarginsGuide
+        let leadingButtonConstraint = btnLaunchAc.leadingAnchor.constraint(equalTo: margins.leadingAnchor)
+        
+        let trailingButtonConstraint = btnLaunchAc.trailingAnchor.constraint(equalTo: margins.trailingAnchor)
+
+        bottomButtonConstraint.isActive = true
+        leadingButtonConstraint.isActive = true
+        trailingButtonConstraint.isActive = true
+        
     }
     
 }
+
 
 extension ViewController: GMSAutocompleteViewControllerDelegate {
 
@@ -192,6 +215,12 @@ extension ViewController: GMSAutocompleteViewControllerDelegate {
         print("Place ID: \(place.placeID)")
         print("Place attributions: \(place.attributions)")
         dismiss(animated: true, completion: nil)
+        
+        // TODO: change camera location
+//        mapView.animate(toLocation: place.coordinate)
+//        let camera = GMSCameraPosition.init(target: place.coordinate, zoom: 13)
+//        mapView.camera = camera
+        
     }
 
     func viewController(_ viewController: GMSAutocompleteViewController, didFailAutocompleteWithError error: Error) {

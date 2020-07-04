@@ -15,30 +15,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PgD-Nw-HwH">
-                                <rect key="frame" x="151" y="392" width="112" height="113"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oko-dD-fvC">
+                                <rect key="frame" x="8" y="52" width="398" height="38"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
-                                    <segue destination="8tB-hT-vYa" kind="show" identifier="showInfoPage" id="yvy-P5-aWA"/>
+                                    <action selector="displayButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fal-7e-VHN"/>
+                                    <segue destination="8tB-hT-vYa" kind="show" identifier="showInfoPage" id="Ct1-GR-wqW"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Error" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Bp-qu-k0z">
-                                <rect key="frame" x="169" y="128" width="38" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="oko-dD-fvC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="Tdz-Iz-hlu"/>
+                            <constraint firstItem="oko-dD-fvC" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="Zuw-cb-lYr"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="oko-dD-fvC" secondAttribute="bottom" constant="8" id="jKC-nu-Z7F"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="oko-dD-fvC" secondAttribute="trailing" constant="8" id="lq4-kT-DSm"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="xLZ-a6-Em8"/>
+                    <connections>
+                        <outlet property="searchButton" destination="oko-dD-fvC" id="buJ-Ci-vKx"/>
+                        <outlet property="testButton" destination="oko-dD-fvC" id="EWt-CU-gnD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="413" y="92"/>
+            <point key="canvasLocation" x="411.59420289855075" y="91.741071428571431"/>
         </scene>
         <!--Title-->
         <scene sceneID="Ka8-28-VKP">

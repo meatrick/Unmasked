@@ -32,7 +32,7 @@ class ViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDel
     @IBAction func myUnwindAction(unwindSegue: UIStoryboardSegue) {}
     
     
-    // MARK: Navigation
+    // MARK: Scene Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let vc = segue.destination as? NewController
@@ -85,6 +85,8 @@ class ViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDel
       self.view = mapView
     }
     
+    // MARK: Tap Events
+    
     func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
       print("You tapped at \(coordinate.latitude), \(coordinate.longitude)")
     }
@@ -104,7 +106,7 @@ class ViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDel
     
     
     
-    // MARK: Location Methods
+    // MARK: User Location
 
     // Handle incoming location events.
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -120,8 +122,6 @@ class ViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDel
 //        self.view = mapView
         mapView.settings.myLocationButton = true
         mapView.delegate = self
-        let target = CLLocationCoordinate2D(latitude: +34.868, longitude: -118.208)
-        mapView.camera = GMSCameraPosition.camera(withTarget: target, zoom: 6)
         locationManager.stopUpdatingLocation()
       }
 
@@ -173,7 +173,8 @@ class ViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDel
       present(autocompleteController, animated: true, completion: nil)
     }
 
-    // Add a button to the view.
+
+    // MARK: Search bar button
     func makeButton() {
         let btnLaunchAc = UIButton(type: .roundedRect)
         btnLaunchAc.backgroundColor = .systemBackground
@@ -204,9 +205,11 @@ class ViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDel
         
     }
     
+    
 }
 
 
+// MARK: Auto-complete
 extension ViewController: GMSAutocompleteViewControllerDelegate {
 
     // Handle the user's selection.
@@ -216,11 +219,19 @@ extension ViewController: GMSAutocompleteViewControllerDelegate {
         print("Place attributions: \(place.attributions)")
         dismiss(animated: true, completion: nil)
         
-        // TODO: change camera location
-//        mapView.animate(toLocation: place.coordinate)
-//        let camera = GMSCameraPosition.init(target: place.coordinate, zoom: 13)
-//        mapView.camera = camera
+        // move the camera to the selected place
+        moveCameraToPlace(placeId: place.placeID)
         
+        // TODO: automatically open information panel for selected business
+        
+        // update class properties for scene navigation
+        self.placeID = place.placeID
+        self.name = place.name
+        
+        // TODO: call function to perform segue from "ViewController"
+//        performSegue(withIdentifier: "showInfoPage", sender: nil)
+
+
     }
 
     func viewController(_ viewController: GMSAutocompleteViewController, didFailAutocompleteWithError error: Error) {
@@ -242,6 +253,24 @@ extension ViewController: GMSAutocompleteViewControllerDelegate {
         UIApplication.shared.isNetworkActivityIndicatorVisible = false
     }
 
+    func moveCameraToPlace(placeId: String?) {
+        // Field: coordinate
+        let fields: GMSPlaceField = GMSPlaceField(rawValue: UInt(GMSPlaceField.coordinate.rawValue))!
+
+        placesClient?.fetchPlace(fromPlaceID: placeId!, placeFields: fields, sessionToken: nil, callback: {
+            (place: GMSPlace?, error: Error?) in
+            if let error = error {
+                print("An error occurred: \(error.localizedDescription)")
+                return
+            }
+            if let place = place {
+                // move camera to place
+//                mapView.animate(toLocation: place.coordinate)
+                let camera = GMSCameraPosition.init(target: place.coordinate, zoom: 20)
+                self.mapView.camera = camera
+            }
+        })
+    }
 }
 
 

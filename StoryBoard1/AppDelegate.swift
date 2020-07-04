@@ -6,6 +6,8 @@
 //  Copyright © 2020 Unmasked Solutions. All rights reserved.
 //
 
+// TODO: handle attributes for images and information
+
 import UIKit
 import GoogleMaps
 import GooglePlaces

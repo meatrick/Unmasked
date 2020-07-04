@@ -28,6 +28,7 @@ class ViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDel
     var placeID: String?
     var name: String?
     var location: CLLocationCoordinate2D?
+    var placeToOpen: GMSPlace?
     
     @IBAction func myUnwindAction(unwindSegue: UIStoryboardSegue) {}
     
@@ -37,10 +38,17 @@ class ViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDel
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let vc = segue.destination as? NewController
         {
-            print(placeID ?? "placeID not set in ViewController")
+//            print(placeID ?? "placeID not set in ViewController")
             vc.placeID = placeID
             vc.name = name
             vc.location = location
+            vc.place = placeToOpen
+            vc.placesClient = placesClient
+            if placeToOpen == nil {
+                print("property is nil")
+            } else {
+                print("prop not nil")
+            }
         }
     }
     
@@ -99,8 +107,9 @@ class ViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDel
         self.name = name
         self.location = location
         
-        // Use segue to do transition
-        performSegue(withIdentifier: "showInfoPage", sender: nil)
+        getPlaceInfoFromID(placeID: placeID)
+        
+        
         
     }
     
@@ -174,7 +183,7 @@ class ViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDel
     }
 
 
-    // MARK: Search bar button
+    // MARK: Search button
     func makeButton() {
         let btnLaunchAc = UIButton(type: .roundedRect)
         btnLaunchAc.backgroundColor = .systemBackground
@@ -209,14 +218,17 @@ class ViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDel
 }
 
 
-// MARK: Auto-complete
+// MARK: Search Auto-complete
 extension ViewController: GMSAutocompleteViewControllerDelegate {
 
     // Handle the user's selection.
     func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
-        print("Place name: \(place.name)")
-        print("Place ID: \(place.placeID)")
-        print("Place attributions: \(place.attributions)")
+        
+        // debugging info
+        let errorStr = NSAttributedString(string: "Error")
+        print("Place name: \(place.name ?? "Error")")
+        print("Place ID: \(place.placeID ?? "Error")")
+        print("Place attributions: \(place.attributions ?? errorStr)")
         dismiss(animated: true, completion: nil)
         
         // move the camera to the selected place
@@ -230,7 +242,9 @@ extension ViewController: GMSAutocompleteViewControllerDelegate {
         
         // TODO: call function to perform segue from "ViewController"
 //        performSegue(withIdentifier: "showInfoPage", sender: nil)
-
+        
+        // get place information, set it to placeToOpen, so it can be sent to other VC
+//        getPlaceInfoFromID(placeID: place.placeID)
 
     }
 
@@ -244,15 +258,17 @@ extension ViewController: GMSAutocompleteViewControllerDelegate {
         dismiss(animated: true, completion: nil)
     }
 
+    // TODO: these functions are depreceted.  Replace or remove
     // Turn the network activity indicator on and off again.
-    func didRequestAutocompletePredictions(_ viewController: GMSAutocompleteViewController) {
-        UIApplication.shared.isNetworkActivityIndicatorVisible = true
-    }
+//    func didRequestAutocompletePredictions(_ viewController: GMSAutocompleteViewController) {
+//        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+//    }
+//
+//    func didUpdateAutocompletePredictions(_ viewController: GMSAutocompleteViewController) {
+//        UIApplication.shared.isNetworkActivityIndicatorVisible = false
+//    }
 
-    func didUpdateAutocompletePredictions(_ viewController: GMSAutocompleteViewController) {
-        UIApplication.shared.isNetworkActivityIndicatorVisible = false
-    }
-
+    // MARK: move camera after search
     func moveCameraToPlace(placeId: String?) {
         // Field: coordinate
         let fields: GMSPlaceField = GMSPlaceField(rawValue: UInt(GMSPlaceField.coordinate.rawValue))!
@@ -269,6 +285,30 @@ extension ViewController: GMSAutocompleteViewControllerDelegate {
                 let camera = GMSCameraPosition.init(target: place.coordinate, zoom: 20)
                 self.mapView.camera = camera
             }
+        })
+    }
+    
+    // MARK: get Place info from placeID
+    // automatically gets the GMSPlace object and sets it to the class property
+    func getPlaceInfoFromID(placeID: String!) {
+        // Specify the place data types to return (in this case, just photos).
+        let fields: GMSPlaceField = GMSPlaceField(rawValue: UInt(GMSPlaceField.photos.rawValue) | UInt(GMSPlaceField.name.rawValue))!
+
+        placesClient?.fetchPlace(fromPlaceID: placeID,
+                                 placeFields: fields,
+                                 sessionToken: nil, callback: {
+          (place: GMSPlace?, error: Error?) in
+          if let error = error {
+            print("An error occurred: \(error.localizedDescription)")
+            return
+          }
+          if let place = place {
+            // pass the information on to the infoVC
+            self.placeToOpen = place
+            print(place.name ?? "place no name")
+            // Use segue to do transition
+            self.performSegue(withIdentifier: "showInfoPage", sender: nil)
+          }
         })
     }
 }

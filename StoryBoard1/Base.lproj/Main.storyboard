@@ -74,6 +74,13 @@
                                         <rect key="frame" x="18" y="75" width="240" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J0N-jL-YP2">
+                                        <rect key="frame" x="105" y="293" width="63" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <gestureRecognizers/>
                                 <viewLayoutGuide key="contentLayoutGuide" id="xMF-Av-5lR"/>
@@ -87,6 +94,7 @@
                     <navigationItem key="navigationItem" title="Title" id="FV0-hN-gEg"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="POIAddress" destination="J0N-jL-YP2" id="Jja-Py-qHM"/>
                         <outlet property="POIImage" destination="p99-YR-pwi" id="2rh-ap-TMp"/>
                         <outlet property="POIName" destination="dJR-8d-7bU" id="wUT-Us-fGF"/>
                     </connections>

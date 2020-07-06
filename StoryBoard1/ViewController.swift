@@ -292,8 +292,9 @@ extension ViewController: GMSAutocompleteViewControllerDelegate {
     // automatically gets the GMSPlace object and sets it to the class property
     func getPlaceInfoFromID(placeID: String!) {
         // Specify the place data types to return (in this case, just photos).
-        #error("This is where I am coding rn, I'm trying to get all the info from the API and then display it all on the UI")
-        let fields: GMSPlaceField = GMSPlaceField(rawValue: UInt(GMSPlaceField.photos.rawValue) | UInt(GMSPlaceField.name.rawValue) | UInt(GMSPlaceField.businessStatus.rawValue))!
+        let fields: GMSPlaceField = GMSPlaceField(rawValue: UInt(GMSPlaceField.photos.rawValue) | UInt(GMSPlaceField.name.rawValue) | UInt(GMSPlaceField.businessStatus.rawValue) | UInt(GMSPlaceField.formattedAddress.rawValue))!
+        
+        
 
         placesClient?.fetchPlace(fromPlaceID: placeID,
                                  placeFields: fields,

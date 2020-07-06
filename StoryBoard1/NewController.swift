@@ -14,6 +14,7 @@ class NewController: UIViewController {
     // MARK: Properties
     @IBOutlet weak var POIName: UILabel!
     @IBOutlet weak var POIImage: UIImageView!
+    @IBOutlet weak var POIAddress: UILabel!
     
     var placeID: String?
     var name: String?
@@ -28,6 +29,9 @@ class NewController: UIViewController {
         
         // Update UI with POI info
         POIName.text = name
+        POIAddress.text = place.formattedAddress
+        
+        
 //        POIImage = place?.photos
         let photoMetadata: GMSPlacePhotoMetadata = place.photos![0]
 

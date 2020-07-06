@@ -167,6 +167,10 @@ class ViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDel
     @objc func autocompleteClicked(_ sender: UIButton) {
       let autocompleteController = GMSAutocompleteViewController()
       autocompleteController.delegate = self
+        
+        autocompleteController.primaryTextColor = .gray
+        autocompleteController.secondaryTextColor = .gray
+        autocompleteController.primaryTextHighlightColor = .black
 
       // Specify the place data types to return.
       let fields: GMSPlaceField = GMSPlaceField(rawValue: UInt(GMSPlaceField.name.rawValue) |

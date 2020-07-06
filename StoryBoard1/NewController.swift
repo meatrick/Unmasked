@@ -15,6 +15,7 @@ class NewController: UIViewController {
     @IBOutlet weak var POIName: UILabel!
     @IBOutlet weak var POIImage: UIImageView!
     @IBOutlet weak var POIAddress: UILabel!
+    @IBOutlet weak var BusinessStatus: UILabel!
     
     var placeID: String?
     var name: String?
@@ -29,11 +30,26 @@ class NewController: UIViewController {
         
         // Update UI with POI info
         POIName.text = place.name
-//        POIName.textColor = .black
-        
         POIAddress.text = place.formattedAddress
         
-        print("\(name)")
+        // business status
+        switch place.businessStatus.rawValue {
+        case 1:
+            BusinessStatus.text = "Operational"
+            BusinessStatus.textColor = .green
+        case 2:
+            BusinessStatus.text = "Closed temporarily"
+            BusinessStatus.textColor = .red
+        case 3:
+            BusinessStatus.text = "Closed permanently"
+            BusinessStatus.textColor = .red
+        case 0:
+            BusinessStatus.text = "Operational status unknown"
+            BusinessStatus.textColor = .gray
+        default:
+            BusinessStatus.text = "Operational Status Unknown"
+        }
+        
         
         
 //        POIImage = place?.photos

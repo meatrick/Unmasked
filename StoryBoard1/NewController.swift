@@ -25,11 +25,15 @@ class NewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.view.backgroundColor = .lightGray
+        self.view.backgroundColor = .white
         
         // Update UI with POI info
-        POIName.text = name
+        POIName.text = place.name
+//        POIName.textColor = .black
+        
         POIAddress.text = place.formattedAddress
+        
+        print("\(name)")
         
         
 //        POIImage = place?.photos

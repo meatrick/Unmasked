@@ -9,13 +9,17 @@
 import UIKit
 import GooglePlaces
 
-class NewController: UIViewController {
+class NewController: UIViewController, UITextViewDelegate {
     
     // MARK: Properties
     @IBOutlet weak var POIName: UILabel!
     @IBOutlet weak var POIImage: UIImageView!
     @IBOutlet weak var POIAddress: UILabel!
     @IBOutlet weak var BusinessStatus: UILabel!
+    @IBOutlet weak var TextViewReview: UITextView!
+    
+    
+    
     
     var placeID: String?
     var name: String?
@@ -23,9 +27,19 @@ class NewController: UIViewController {
     var placesClient: GMSPlacesClient?
     var place: GMSPlace!
 
+    // MARK: Actions
+    @IBAction func btnSubmitReview(_ sender: Any) {
+        print(TextViewReview.text!)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        TextViewReview.delegate = self
+        TextViewReview.backgroundColor = .systemGray
+//        NotificationCenter.default.addObserver(self, selector: #selector(NewController.updateTextView(notification:)), name: Notification.Name.UIResponder.keyboardWillChangeFrameNotification, object: nil)
+//        NotificationCenter.default.addObserver(self, selector: #selector(NewController.updateTextView(notification:)), name: Notification.Name.UIResponder.keyboardWillHideNotification, object: nil)
+        
         self.view.backgroundColor = .white
         
         // Update UI with POI info
@@ -71,4 +85,21 @@ class NewController: UIViewController {
     
 //    @IBAction func unwind(_ segue: UIStoryboardSegue) { }
 
+//    func textViewDidBeginEditing(_ textView: UITextView) {
+//        textView.backgroundColor = UIColor.lightGray
+//    }
+//
+//    func textViewDidEndEditing(_ textView: UITextView) {
+//        textView.backgroundColor = UIColor.white
+//    }
+    
+    /* Updated for Swift 4 */
+    func textView(_ TextViewReview: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+          if(text == "\n") {
+              TextViewReview.resignFirstResponder()
+              return false
+          }
+          return true
+      }
 }
+

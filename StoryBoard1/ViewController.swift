@@ -190,13 +190,20 @@ class ViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDel
     // MARK: Search button
     func makeButton() {
         let btnLaunchAc = UIButton(type: .roundedRect)
-        btnLaunchAc.backgroundColor = .systemBackground
+        
+        btnLaunchAc.backgroundColor = .systemGray
         btnLaunchAc.setTitle("Search...", for: .normal)
         btnLaunchAc.addTarget(self, action: #selector(autocompleteClicked), for: .touchUpInside)
         
-        //Add padding around text
+//        Add padding around text
         btnLaunchAc.titleEdgeInsets = UIEdgeInsets(top: -10,left: -10,bottom: -10,right: -10)
         btnLaunchAc.contentEdgeInsets = UIEdgeInsets(top: 5,left: 5,bottom: 5,right: 5)
+        
+        
+        
+        
+        
+        
         
         self.view.addSubview(btnLaunchAc)
         

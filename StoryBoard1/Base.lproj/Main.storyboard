@@ -127,6 +127,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JpD-Vg-AFU">
+                                <rect key="frame" x="16" y="14" width="24" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="xmark" catalog="system"/>
+                                <connections>
+                                    <segue destination="ATN-kb-YtV" kind="unwind" unwindAction="myUnwindActionWithUnwindSegue:" id="nG6-1k-f1Y"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="VyH-Ty-Sbs"/>
@@ -134,8 +142,12 @@
                     <navigationItem key="navigationItem" id="YJQ-Ad-g1a"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3jd-0A-0fM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="ATN-kb-YtV" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2177" y="92"/>
+            <point key="canvasLocation" x="2176.8000000000002" y="91.625615763546804"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="xmark" catalog="system" width="128" height="113"/>
+    </resources>
 </document>

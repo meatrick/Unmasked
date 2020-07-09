@@ -91,13 +91,6 @@ class NewController: UIViewController {
 //        textView.backgroundColor = UIColor.white
 //    }
     
-    /* Updated for Swift 4 */
-    func textView(_ TextViewReview: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
-          if(text == "\n") {
-              TextViewReview.resignFirstResponder()
-              return false
-          }
-          return true
-      }
+    
 }
 

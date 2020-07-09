@@ -160,6 +160,9 @@
                         <viewLayoutGuide key="safeArea" id="VyH-Ty-Sbs"/>
                     </view>
                     <navigationItem key="navigationItem" id="YJQ-Ad-g1a"/>
+                    <connections>
+                        <outlet property="textReview" destination="p4z-Fa-Lgh" id="orJ-D7-hux"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3jd-0A-0fM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="ATN-kb-YtV" userLabel="Exit" sceneMemberID="exit"/>

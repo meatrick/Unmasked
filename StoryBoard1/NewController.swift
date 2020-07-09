@@ -9,16 +9,20 @@
 import UIKit
 import GooglePlaces
 
-class NewController: UIViewController, UITextViewDelegate {
+class NewController: UIViewController {
     
     // MARK: Properties
+    
     @IBOutlet weak var POIName: UILabel!
     @IBOutlet weak var POIImage: UIImageView!
     @IBOutlet weak var POIAddress: UILabel!
     @IBOutlet weak var BusinessStatus: UILabel!
-    @IBOutlet weak var TextViewReview: UITextView!
     
     
+    @IBAction func btnWriteReview(_ sender: Any) {
+        // segue to ReviewController
+        performSegue(withIdentifier: "showReviewController", sender: nil)
+    }
     
     
     var placeID: String?
@@ -27,16 +31,10 @@ class NewController: UIViewController, UITextViewDelegate {
     var placesClient: GMSPlacesClient?
     var place: GMSPlace!
 
-    // MARK: Actions
-    @IBAction func btnSubmitReview(_ sender: Any) {
-        print(TextViewReview.text!)
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        TextViewReview.delegate = self
-        TextViewReview.backgroundColor = .systemGray
 //        NotificationCenter.default.addObserver(self, selector: #selector(NewController.updateTextView(notification:)), name: Notification.Name.UIResponder.keyboardWillChangeFrameNotification, object: nil)
 //        NotificationCenter.default.addObserver(self, selector: #selector(NewController.updateTextView(notification:)), name: Notification.Name.UIResponder.keyboardWillHideNotification, object: nil)
         

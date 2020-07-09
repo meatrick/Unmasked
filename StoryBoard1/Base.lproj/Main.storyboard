@@ -80,20 +80,13 @@
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Review..." textAlignment="natural" id="K44-8T-4Kb">
-                                        <rect key="frame" x="8" y="342" width="359" height="179"/>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pNg-Td-SE6">
+                                        <rect key="frame" x="8" y="342" width="359" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bIC-tr-th1">
-                                        <rect key="frame" x="8" y="529" width="49" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Submit"/>
+                                        <state key="normal" title="Write A Review"/>
                                         <connections>
-                                            <action selector="btnSubmitReview:" destination="8tB-hT-vYa" eventType="touchUpInside" id="rPa-98-QUU"/>
+                                            <action selector="btnWriteReview:" destination="8tB-hT-vYa" eventType="touchUpInside" id="QP2-FW-Xq7"/>
+                                            <segue destination="A8l-Tf-qPt" kind="show" identifier="showReviewController" id="VZv-f9-IR5"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -113,12 +106,36 @@
                         <outlet property="POIAddress" destination="J0N-jL-YP2" id="Jja-Py-qHM"/>
                         <outlet property="POIImage" destination="p99-YR-pwi" id="2rh-ap-TMp"/>
                         <outlet property="POIName" destination="dJR-8d-7bU" id="wUT-Us-fGF"/>
-                        <outlet property="TextViewReview" destination="K44-8T-4Kb" id="NgU-g6-fzW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V7l-Cq-H5q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1268" y="91.625615763546804"/>
+        </scene>
+        <!--Review Controller-->
+        <scene sceneID="TzT-nD-15r">
+            <objects>
+                <viewController storyboardIdentifier="ReviewController" id="A8l-Tf-qPt" customClass="ReviewController" customModule="StoryBoard1" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hfn-IP-TaJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Write a Review" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yVR-4j-XuE">
+                                <rect key="frame" x="16" y="44" width="113" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="VyH-Ty-Sbs"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="YJQ-Ad-g1a"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3jd-0A-0fM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2177" y="92"/>
         </scene>
     </scenes>
 </document>

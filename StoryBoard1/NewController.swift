@@ -17,13 +17,10 @@ class NewController: UIViewController {
     @IBOutlet weak var POIImage: UIImageView!
     @IBOutlet weak var POIAddress: UILabel!
     @IBOutlet weak var BusinessStatus: UILabel!
-    @IBOutlet weak var ReviewView: Review!
-    
-    
-    @IBAction func btnWriteReview(_ sender: Any) {
-        // segue to ReviewController
-        performSegue(withIdentifier: "showReviewController", sender: nil)
-    }
+    @IBOutlet weak var reviewStack: UIStackView!
+    @IBOutlet weak var review0: Review!
+    @IBOutlet weak var review1: Review!
+    @IBOutlet weak var review2: Review!
     
     
     var placeID: String?
@@ -31,13 +28,20 @@ class NewController: UIViewController {
     var location: CLLocationCoordinate2D?
     var placesClient: GMSPlacesClient?
     var place: GMSPlace!
-
+    
+    
+    // MARK: Actions
+    @IBAction func btnWriteReview(_ sender: Any) {
+        print("SHOW THE SEGUE")
+        // segue to ReviewController
+        performSegue(withIdentifier: "showReviewController", sender: nil)
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Review
-        ReviewView.reviewText.text = "This is a test"
+    
+        // MARK: display text
         
         // Update UI with POI info
         POIName.text = place.name
@@ -61,7 +65,7 @@ class NewController: UIViewController {
             BusinessStatus.text = "Operational Status Unknown"
         }
         
-        
+        // MARK: get photo
         
 //        POIImage = place?.photos
         let photoMetadata: GMSPlacePhotoMetadata = place.photos![0]
@@ -78,18 +82,29 @@ class NewController: UIViewController {
 //            self.lblText?.attributedText = photoMetadata.attributions;
           }
         })
-    }
-    
-//    @IBAction func unwind(_ segue: UIStoryboardSegue) { }
+        
+        
+        // MARK: get reviews
+        
+        // get reviews from firebase by passing in placeID
+        // returns a list of reviews
+        // for up to 3 reviews, create a ReviewView, populate the data, and display it
+//        let review0 = Review()
+//        let review1 = Review()
+//        let review2 = Review()
+        review0.reviewText.text = "good"
+        review1.reviewText.text = "bad"
+        review2.reviewText.text = "okay"
+        
+        // constraints
 
-//    func textViewDidBeginEditing(_ textView: UITextView) {
-//        textView.backgroundColor = UIColor.lightGray
-//    }
-//
-//    func textViewDidEndEditing(_ textView: UITextView) {
-//        textView.backgroundColor = UIColor.white
-//    }
-    
+
+//        reviewStack.addArrangedSubview(review0)
+//        reviewStack.addArrangedSubview(review1)
+//        reviewStack.addArrangedSubview(review2)
+//        
+        
+    }
     
 }
 

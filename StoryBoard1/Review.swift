@@ -14,6 +14,8 @@ class Review: UIView {
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var reviewText: UILabel!
     
+//    var rating: Int
+        
     // MARK: Initialization
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -30,5 +32,6 @@ class Review: UIView {
         addSubview(contentView)
         contentView.frame = self.bounds
         contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+        
     }
 }

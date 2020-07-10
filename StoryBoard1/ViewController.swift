@@ -33,22 +33,16 @@ class ViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDel
     @IBAction func myUnwindAction(unwindSegue: UIStoryboardSegue) {}
     
     
-    // MARK: Scene Navigation
+    // MARK: Segue Prep
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let vc = segue.destination as? NewController
         {
-//            print(placeID ?? "placeID not set in ViewController")
             vc.placeID = placeID
             vc.name = name
             vc.location = location
             vc.place = placeToOpen
             vc.placesClient = placesClient
-            if placeToOpen == nil {
-                print("property is nil")
-            } else {
-                print("prop not nil")
-            }
         }
     }
     
@@ -318,7 +312,7 @@ extension ViewController: GMSAutocompleteViewControllerDelegate {
           if let place = place {
             // pass the information on to the infoVC
             self.placeToOpen = place
-            print(place.name ?? "place no name")
+
             // Use segue to do transition
             self.performSegue(withIdentifier: "showInfoPage", sender: nil)
           }

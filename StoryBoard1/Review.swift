@@ -33,5 +33,10 @@ class Review: UIView {
         contentView.frame = self.bounds
         contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         
+        contentView.layer.borderWidth = 2
+        contentView.layer.borderColor = UIColor.systemGray.cgColor
+        contentView.layer.cornerRadius = 5
+        contentView.layer.masksToBounds = true
+        
     }
 }

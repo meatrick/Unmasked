@@ -178,14 +178,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JpD-Vg-AFU">
-                                <rect key="frame" x="16" y="14" width="24" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="xmark" catalog="system"/>
-                                <connections>
-                                    <segue destination="ATN-kb-YtV" kind="unwind" unwindAction="myUnwindActionWithUnwindSegue:" id="nG6-1k-f1Y"/>
-                                </connections>
-                            </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Review..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="p4z-Fa-Lgh">
                                 <rect key="frame" x="16" y="127" width="343" height="210"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -212,6 +204,14 @@
                                 <state key="normal" title="Submit Review"/>
                                 <connections>
                                     <action selector="submitReview:" destination="A8l-Tf-qPt" eventType="touchUpInside" id="TdN-VG-uiR"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2fH-kt-Omq">
+                                <rect key="frame" x="16" y="13" width="23" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="xmark" catalog="system"/>
+                                <connections>
+                                    <segue destination="ATN-kb-YtV" kind="unwind" unwindAction="myUnwindActionWithUnwindSegue:" id="NX3-NN-YNQ"/>
                                 </connections>
                             </button>
                         </subviews>

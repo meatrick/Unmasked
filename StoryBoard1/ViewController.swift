@@ -30,7 +30,7 @@ class ViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDel
     var location: CLLocationCoordinate2D?
     var placeToOpen: GMSPlace?
     
-    @IBAction func myUnwindAction(unwindSegue: UIStoryboardSegue) {}
+
     
     
     // MARK: Segue Prep

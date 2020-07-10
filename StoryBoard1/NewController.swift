@@ -37,6 +37,7 @@ class NewController: UIViewController {
         performSegue(withIdentifier: "showReviewController", sender: nil)
     }
     
+    @IBAction func myUnwindAction(unwindSegue: UIStoryboardSegue) {}
     
     override func viewDidLoad() {
         super.viewDidLoad()

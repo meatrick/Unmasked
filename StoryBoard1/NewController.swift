@@ -38,7 +38,7 @@ class NewController: UIViewController {
 //        NotificationCenter.default.addObserver(self, selector: #selector(NewController.updateTextView(notification:)), name: Notification.Name.UIResponder.keyboardWillChangeFrameNotification, object: nil)
 //        NotificationCenter.default.addObserver(self, selector: #selector(NewController.updateTextView(notification:)), name: Notification.Name.UIResponder.keyboardWillHideNotification, object: nil)
         
-        self.view.backgroundColor = .white
+//        self.view.backgroundColor = .white
         
         // Update UI with POI info
         POIName.text = place.name

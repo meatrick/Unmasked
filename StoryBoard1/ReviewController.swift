@@ -29,7 +29,14 @@ class ReviewController: UIViewController, UITextViewDelegate {
     }
     
     @IBOutlet weak var textReview: UITextView!
-
+    
+    @IBAction func submitReview(_ sender: Any) {
+        print(textReview.text)
+    }
+    
+    
+    
+    
     // MARK: adjust view for keys
     @objc func adjustForKeyboard(notification: Notification)
     {

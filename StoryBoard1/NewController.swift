@@ -32,7 +32,6 @@ class NewController: UIViewController {
     
     // MARK: Actions
     @IBAction func btnWriteReview(_ sender: Any) {
-        print("SHOW THE SEGUE")
         // segue to ReviewController
         performSegue(withIdentifier: "showReviewController", sender: nil)
     }

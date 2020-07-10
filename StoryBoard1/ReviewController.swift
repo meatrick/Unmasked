@@ -13,6 +13,11 @@ class ReviewController: UIViewController, UITextViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        textReview.layer.borderWidth = 2
+        textReview.layer.borderColor = UIColor.systemGray.cgColor
+        textReview.layer.cornerRadius = 5
+        textReview.layer.masksToBounds = true
+        
         // Done button
         self.textReview.delegate = self
         self.addDoneButtonOnKeyboard()

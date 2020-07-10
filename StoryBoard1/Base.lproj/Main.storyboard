@@ -81,7 +81,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pNg-Td-SE6">
-                                        <rect key="frame" x="8" y="364" width="359" height="30"/>
+                                        <rect key="frame" x="136" y="596" width="103" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Write A Review"/>
                                         <connections>
@@ -89,6 +89,11 @@
                                             <segue destination="A8l-Tf-qPt" kind="show" identifier="showReviewController" id="VZv-f9-IR5"/>
                                         </connections>
                                     </button>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CJh-qk-t0q" customClass="Review" customModule="StoryBoard1" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="342" width="240" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    </view>
                                 </subviews>
                                 <gestureRecognizers/>
                                 <viewLayoutGuide key="contentLayoutGuide" id="xMF-Av-5lR"/>
@@ -106,6 +111,7 @@
                         <outlet property="POIAddress" destination="J0N-jL-YP2" id="Jja-Py-qHM"/>
                         <outlet property="POIImage" destination="p99-YR-pwi" id="2rh-ap-TMp"/>
                         <outlet property="POIName" destination="dJR-8d-7bU" id="wUT-Us-fGF"/>
+                        <outlet property="ReviewView" destination="CJh-qk-t0q" id="2P6-Wx-wwW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V7l-Cq-H5q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

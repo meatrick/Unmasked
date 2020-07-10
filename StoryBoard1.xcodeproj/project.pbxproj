@@ -11,6 +11,8 @@
 		AF63DA4524B7C20100CF2F2A /* ReviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF63DA4424B7C20100CF2F2A /* ReviewController.swift */; };
 		AF63DA4D24B7CC4800CF2F2A /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF63DA4C24B7CC4800CF2F2A /* RatingControl.swift */; };
 		AF63DA4F24B7EBA200CF2F2A /* ReviewStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF63DA4E24B7EBA200CF2F2A /* ReviewStack.swift */; };
+		AF63DA7C24B7FBE400CF2F2A /* Review.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF63DA7B24B7FBE400CF2F2A /* Review.xib */; };
+		AF63DA7E24B7FBF100CF2F2A /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF63DA7D24B7FBF100CF2F2A /* Review.swift */; };
 		AFA0F70224A6D5CF002C94B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA0F70124A6D5CF002C94B1 /* AppDelegate.swift */; };
 		AFA0F70424A6D5CF002C94B1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA0F70324A6D5CF002C94B1 /* SceneDelegate.swift */; };
 		AFA0F70624A6D5CF002C94B1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA0F70524A6D5CF002C94B1 /* ViewController.swift */; };
@@ -46,6 +48,8 @@
 		AF63DA4424B7C20100CF2F2A /* ReviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewController.swift; sourceTree = "<group>"; };
 		AF63DA4C24B7CC4800CF2F2A /* RatingControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RatingControl.swift; path = /Users/jennasmith/Projects/StoryBoard1/StoryBoard1/RatingControl.swift; sourceTree = "<absolute>"; };
 		AF63DA4E24B7EBA200CF2F2A /* ReviewStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewStack.swift; sourceTree = "<group>"; };
+		AF63DA7B24B7FBE400CF2F2A /* Review.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Review.xib; sourceTree = "<group>"; };
+		AF63DA7D24B7FBF100CF2F2A /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		AFA0F6FE24A6D5CF002C94B1 /* StoryBoard1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StoryBoard1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFA0F70124A6D5CF002C94B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AFA0F70324A6D5CF002C94B1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -145,6 +149,8 @@
 				AFA0F70A24A6D5D1002C94B1 /* Assets.xcassets */,
 				AFA0F70C24A6D5D1002C94B1 /* LaunchScreen.storyboard */,
 				AFA0F70F24A6D5D1002C94B1 /* Info.plist */,
+				AF63DA7B24B7FBE400CF2F2A /* Review.xib */,
+				AF63DA7D24B7FBF100CF2F2A /* Review.swift */,
 			);
 			path = StoryBoard1;
 			sourceTree = "<group>";
@@ -275,6 +281,7 @@
 			files = (
 				AFA0F70E24A6D5D1002C94B1 /* LaunchScreen.storyboard in Resources */,
 				AFA0F70B24A6D5D1002C94B1 /* Assets.xcassets in Resources */,
+				AF63DA7C24B7FBE400CF2F2A /* Review.xib in Resources */,
 				AFA0F77824A80183002C94B1 /* Podfile in Resources */,
 				AFA0F70924A6D5CF002C94B1 /* Main.storyboard in Resources */,
 			);
@@ -344,6 +351,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AFA0F78024ABDBE2002C94B1 /* NewController.swift in Sources */,
+				AF63DA7E24B7FBF100CF2F2A /* Review.swift in Sources */,
 				AFA0F70624A6D5CF002C94B1 /* ViewController.swift in Sources */,
 				AF63DA4F24B7EBA200CF2F2A /* ReviewStack.swift in Sources */,
 				AF63DA4D24B7CC4800CF2F2A /* RatingControl.swift in Sources */,

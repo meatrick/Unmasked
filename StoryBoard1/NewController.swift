@@ -17,6 +17,7 @@ class NewController: UIViewController {
     @IBOutlet weak var POIImage: UIImageView!
     @IBOutlet weak var POIAddress: UILabel!
     @IBOutlet weak var BusinessStatus: UILabel!
+    @IBOutlet weak var ReviewView: Review!
     
     
     @IBAction func btnWriteReview(_ sender: Any) {
@@ -35,10 +36,8 @@ class NewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        NotificationCenter.default.addObserver(self, selector: #selector(NewController.updateTextView(notification:)), name: Notification.Name.UIResponder.keyboardWillChangeFrameNotification, object: nil)
-//        NotificationCenter.default.addObserver(self, selector: #selector(NewController.updateTextView(notification:)), name: Notification.Name.UIResponder.keyboardWillHideNotification, object: nil)
-        
-//        self.view.backgroundColor = .white
+        // Review
+        ReviewView.reviewText.text = "This is a test"
         
         // Update UI with POI info
         POIName.text = place.name

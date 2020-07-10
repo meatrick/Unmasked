@@ -10,6 +10,7 @@
 		5AEC9EFA123A5FC33FBCF4AD /* libPods-StoryBoard1.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EE4A894E1744B3C894798FC /* libPods-StoryBoard1.a */; };
 		AF63DA4524B7C20100CF2F2A /* ReviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF63DA4424B7C20100CF2F2A /* ReviewController.swift */; };
 		AF63DA4D24B7CC4800CF2F2A /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF63DA4C24B7CC4800CF2F2A /* RatingControl.swift */; };
+		AF63DA4F24B7EBA200CF2F2A /* ReviewStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF63DA4E24B7EBA200CF2F2A /* ReviewStack.swift */; };
 		AFA0F70224A6D5CF002C94B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA0F70124A6D5CF002C94B1 /* AppDelegate.swift */; };
 		AFA0F70424A6D5CF002C94B1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA0F70324A6D5CF002C94B1 /* SceneDelegate.swift */; };
 		AFA0F70624A6D5CF002C94B1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA0F70524A6D5CF002C94B1 /* ViewController.swift */; };
@@ -20,9 +21,6 @@
 		AFA0F72424A6D5D1002C94B1 /* StoryBoard1UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA0F72324A6D5D1002C94B1 /* StoryBoard1UITests.swift */; };
 		AFA0F77824A80183002C94B1 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = AFA0F77724A80183002C94B1 /* Podfile */; };
 		AFA0F78024ABDBE2002C94B1 /* NewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA0F77F24ABDBE2002C94B1 /* NewController.swift */; };
-		AFA0F78624ABEEB1002C94B1 /* InfoNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA0F78524ABEEB1002C94B1 /* InfoNavController.swift */; };
-		AFA0F79024AD37ED002C94B1 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA0F78F24AD37ED002C94B1 /* InfoViewController.swift */; };
-		AFA0F79224AD383C002C94B1 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA0F79124AD383C002C94B1 /* InfoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +45,7 @@
 		56A996607821F233E813DDA5 /* Pods-StoryBoard1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StoryBoard1.release.xcconfig"; path = "Target Support Files/Pods-StoryBoard1/Pods-StoryBoard1.release.xcconfig"; sourceTree = "<group>"; };
 		AF63DA4424B7C20100CF2F2A /* ReviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewController.swift; sourceTree = "<group>"; };
 		AF63DA4C24B7CC4800CF2F2A /* RatingControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RatingControl.swift; path = /Users/jennasmith/Projects/StoryBoard1/StoryBoard1/RatingControl.swift; sourceTree = "<absolute>"; };
+		AF63DA4E24B7EBA200CF2F2A /* ReviewStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewStack.swift; sourceTree = "<group>"; };
 		AFA0F6FE24A6D5CF002C94B1 /* StoryBoard1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StoryBoard1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFA0F70124A6D5CF002C94B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AFA0F70324A6D5CF002C94B1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,9 +62,6 @@
 		AFA0F72524A6D5D1002C94B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AFA0F77724A80183002C94B1 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		AFA0F77F24ABDBE2002C94B1 /* NewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewController.swift; sourceTree = "<group>"; };
-		AFA0F78524ABEEB1002C94B1 /* InfoNavController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoNavController.swift; sourceTree = "<group>"; };
-		AFA0F78F24AD37ED002C94B1 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
-		AFA0F79124AD383C002C94B1 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		B8F364FA363D09D3B3AD94CF /* Pods-StoryBoard1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StoryBoard1.debug.xcconfig"; path = "Target Support Files/Pods-StoryBoard1/Pods-StoryBoard1.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -140,14 +136,12 @@
 			children = (
 				AF63DA4C24B7CC4800CF2F2A /* RatingControl.swift */,
 				AFA0F70124A6D5CF002C94B1 /* AppDelegate.swift */,
-				AFA0F79124AD383C002C94B1 /* InfoView.swift */,
 				AFA0F77F24ABDBE2002C94B1 /* NewController.swift */,
 				AFA0F70324A6D5CF002C94B1 /* SceneDelegate.swift */,
 				AFA0F70524A6D5CF002C94B1 /* ViewController.swift */,
 				AFA0F70724A6D5CF002C94B1 /* Main.storyboard */,
+				AF63DA4E24B7EBA200CF2F2A /* ReviewStack.swift */,
 				AF63DA4424B7C20100CF2F2A /* ReviewController.swift */,
-				AFA0F78F24AD37ED002C94B1 /* InfoViewController.swift */,
-				AFA0F78524ABEEB1002C94B1 /* InfoNavController.swift */,
 				AFA0F70A24A6D5D1002C94B1 /* Assets.xcassets */,
 				AFA0F70C24A6D5D1002C94B1 /* LaunchScreen.storyboard */,
 				AFA0F70F24A6D5D1002C94B1 /* Info.plist */,
@@ -351,12 +345,10 @@
 			files = (
 				AFA0F78024ABDBE2002C94B1 /* NewController.swift in Sources */,
 				AFA0F70624A6D5CF002C94B1 /* ViewController.swift in Sources */,
-				AFA0F78624ABEEB1002C94B1 /* InfoNavController.swift in Sources */,
-				AFA0F79024AD37ED002C94B1 /* InfoViewController.swift in Sources */,
+				AF63DA4F24B7EBA200CF2F2A /* ReviewStack.swift in Sources */,
 				AF63DA4D24B7CC4800CF2F2A /* RatingControl.swift in Sources */,
 				AFA0F70224A6D5CF002C94B1 /* AppDelegate.swift in Sources */,
 				AFA0F70424A6D5CF002C94B1 /* SceneDelegate.swift in Sources */,
-				AFA0F79224AD383C002C94B1 /* InfoView.swift in Sources */,
 				AF63DA4524B7C20100CF2F2A /* ReviewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -31,7 +31,7 @@ class ReviewController: UIViewController, UITextViewDelegate {
     @IBOutlet weak var textReview: UITextView!
     
     @IBAction func submitReview(_ sender: Any) {
-        print(textReview.text)
+        print(textReview.text!)
     }
     
     
@@ -48,9 +48,10 @@ class ReviewController: UIViewController, UITextViewDelegate {
                 // if keyboard size is not available for some reason, dont do anything
                 return
              }
-           
-           // move the root view up by the distance of keyboard height
-           self.view.frame.origin.y = 0 - keyboardSize.height
+            if (self.textReview.frame.origin.y > keyboardSize.height) {
+                // move the root view up by the distance of keyboard height
+                self.view.frame.origin.y = 0 - keyboardSize.height
+            }
         }
         textReview.scrollIndicatorInsets = textReview.contentInset
     }
@@ -90,4 +91,5 @@ class ReviewController: UIViewController, UITextViewDelegate {
             */
         }
 }
+
 

@@ -38,10 +38,10 @@
             </objects>
             <point key="canvasLocation" x="410.39999999999998" y="91.625615763546804"/>
         </scene>
-        <!--Title-->
+        <!--InfoView Controller-->
         <scene sceneID="Ka8-28-VKP">
             <objects>
-                <viewController storyboardIdentifier="NewController" id="8tB-hT-vYa" customClass="NewController" customModule="StoryBoard1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NewController" title="InfoView Controller" id="8tB-hT-vYa" customClass="NewController" customModule="StoryBoard1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="M6q-qC-udB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -81,7 +81,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="yu7-MR-xYg">
-                                                <rect key="frame" x="8" y="415" width="359" height="384"/>
+                                                <rect key="frame" x="8" y="717" width="359" height="384"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nqf-zQ-SZY" customClass="Review" customModule="StoryBoard1" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="359" height="128"/>
@@ -97,8 +97,9 @@
                                                     </view>
                                                 </subviews>
                                             </stackView>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pNg-Td-SE6">
-                                                <rect key="frame" x="110" y="364" width="155" height="30"/>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pNg-Td-SE6">
+                                                <rect key="frame" x="110" y="608" width="155" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Write A Review"/>
                                                 <connections>
                                                     <action selector="btnWriteReview:" destination="8tB-hT-vYa" eventType="touchUpInside" id="zg4-T0-q6B"/>
@@ -115,7 +116,6 @@
                                             <constraint firstItem="J0N-jL-YP2" firstAttribute="leading" secondItem="CPz-2s-npS" secondAttribute="leading" constant="8" id="VQJ-5F-TvA"/>
                                             <constraint firstItem="J0N-jL-YP2" firstAttribute="top" secondItem="dJR-8d-7bU" secondAttribute="bottom" constant="8" id="Wbo-5P-PLt"/>
                                             <constraint firstItem="p99-YR-pwi" firstAttribute="top" secondItem="CPz-2s-npS" secondAttribute="top" id="Z5l-Ea-c7E"/>
-                                            <constraint firstItem="pNg-Td-SE6" firstAttribute="top" secondItem="5HR-9P-sWp" secondAttribute="bottom" constant="8" id="ZRr-Xo-yRO"/>
                                             <constraint firstAttribute="trailing" secondItem="5HR-9P-sWp" secondAttribute="trailing" constant="8" id="bIm-oc-Bgi"/>
                                             <constraint firstItem="dJR-8d-7bU" firstAttribute="leading" secondItem="CPz-2s-npS" secondAttribute="leading" constant="8" id="dBt-JW-BxK"/>
                                             <constraint firstAttribute="trailing" secondItem="J0N-jL-YP2" secondAttribute="trailing" constant="8" id="e3b-SQ-7xx"/>

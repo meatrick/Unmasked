@@ -46,6 +46,8 @@ class ViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDel
         }
     }
     
+    @IBAction func myUnwindAction(unwindSegue: UIStoryboardSegue) {}
+
     
     // MARK: View Loading Methods
     

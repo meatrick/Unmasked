@@ -21,6 +21,14 @@ class NewController: UIViewController {
     @IBOutlet weak var review0: Review!
     @IBOutlet weak var review1: Review!
     @IBOutlet weak var review2: Review!
+    @IBOutlet weak var displayedRatingNum: UILabel!
+    @IBOutlet weak var displayedStars: StarRatingView!
+    @IBOutlet weak var displayedNumReviews: UILabel!
+    @IBOutlet weak var starsOverall: StarRatingView!
+    @IBOutlet weak var starsCat1: StarRatingView!
+    @IBOutlet weak var starsCat2: StarRatingView!
+    @IBOutlet weak var starsCat3: StarRatingView!
+    @IBOutlet weak var starsCat4: StarRatingView!
     
     
     var placeID: String?

@@ -378,10 +378,18 @@
                         <outlet property="POIAddress" destination="J0N-jL-YP2" id="Jja-Py-qHM"/>
                         <outlet property="POIImage" destination="p99-YR-pwi" id="2rh-ap-TMp"/>
                         <outlet property="POIName" destination="dJR-8d-7bU" id="wUT-Us-fGF"/>
+                        <outlet property="displayedNumReviews" destination="Jla-0K-nGw" id="fHC-Jh-kjh"/>
+                        <outlet property="displayedRatingNum" destination="16H-Uk-6G5" id="cvD-r2-9Tr"/>
+                        <outlet property="displayedStars" destination="AhL-bi-S25" id="Mkw-xe-bQA"/>
                         <outlet property="review0" destination="Nqf-zQ-SZY" id="Ivl-j9-5cf"/>
                         <outlet property="review1" destination="LJ2-ba-TFd" id="woc-n0-Ryp"/>
                         <outlet property="review2" destination="gaG-ew-Oi9" id="EKr-Am-M6J"/>
                         <outlet property="reviewStack" destination="yu7-MR-xYg" id="wkZ-Ck-cSc"/>
+                        <outlet property="starsCat1" destination="Uiw-e1-6UG" id="j7y-g8-KhL"/>
+                        <outlet property="starsCat2" destination="1hw-75-p3t" id="sDc-Da-wTl"/>
+                        <outlet property="starsCat3" destination="Gzc-s5-XwA" id="6Nd-Gi-HFp"/>
+                        <outlet property="starsCat4" destination="nMs-jw-XFT" id="oPx-QB-dsC"/>
+                        <outlet property="starsOverall" destination="TMx-Xy-Qfh" id="B4v-5t-MPv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V7l-Cq-H5q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

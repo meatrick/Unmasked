@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>488385172711-8oou51k92ep832818eq1pp3vctq2oqdr.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.488385172711-8oou51k92ep832818eq1pp3vctq2oqdr</string>
+	<key>API_KEY</key>
+	<string>AIzaSyArimkKNZSYyJoOt5Y0gRRlcplyBV5O8sM</string>
+	<key>GCM_SENDER_ID</key>
+	<string>488385172711</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.unmaskedSolutions.StoryBoard1</string>
+	<key>PROJECT_ID</key>
+	<string>coronapplication</string>
+	<key>STORAGE_BUCKET</key>
+	<string>coronapplication.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:488385172711:ios:fb0cbff6fe952f94b4fe42</string>
+	<key>DATABASE_URL</key>
+	<string>https://coronapplication.firebaseio.com</string>
+</dict>
+</plist>

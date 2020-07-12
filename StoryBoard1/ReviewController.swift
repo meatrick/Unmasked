@@ -10,6 +10,12 @@ import UIKit
 
 class ReviewController: UIViewController, UITextViewDelegate {
 
+    @IBOutlet weak var textReview: UITextView!
+    
+    @IBAction func submitReview(_ sender: Any) {
+        print(textReview.text!)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -17,6 +23,10 @@ class ReviewController: UIViewController, UITextViewDelegate {
         textReview.layer.borderColor = UIColor.systemGray.cgColor
         textReview.layer.cornerRadius = 5
         textReview.layer.masksToBounds = true
+        
+        // placeholder text
+        textReview.textColor = .lightGray
+        textReview.text = "(Optional) Leave a review..."
         
         // Done button
         self.textReview.delegate = self
@@ -28,13 +38,25 @@ class ReviewController: UIViewController, UITextViewDelegate {
         notificationCenter.addObserver(self, selector: #selector(adjustForKeyboard), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
     }
     
-    @IBOutlet weak var textReview: UITextView!
+    // MARK: placeholder
     
-    @IBAction func submitReview(_ sender: Any) {
-        print(textReview.text!)
+    func textViewDidBeginEditing (_ textView: UITextView) {
+        if textReview.textColor == UIColor.lightGray && textReview.isFirstResponder {
+            textReview.text = nil
+            if self.traitCollection.userInterfaceStyle == .dark {
+                textReview.textColor = .white
+            } else {
+                textReview.textColor = .black
+            }
+        }
     }
     
-    
+    func textViewDidEndEditing (_ textView: UITextView) {
+        if textReview.text.isEmpty || textReview.text == "" {
+            textReview.textColor = .lightGray
+            textReview.text = "(Optional) Leave a review..."
+        }
+    }
     
     
     // MARK: adjust view for keys

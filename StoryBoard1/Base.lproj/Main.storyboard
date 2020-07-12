@@ -254,8 +254,8 @@
                                                 </constraints>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pNg-Td-SE6">
-                                                <rect key="frame" x="136" y="540.33333333333337" width="103" height="32"/>
-                                                <state key="normal" title="Write A Review"/>
+                                                <rect key="frame" x="134" y="540.33333333333337" width="107" height="32"/>
+                                                <state key="normal" title="Leave A Review"/>
                                                 <connections>
                                                     <action selector="btnWriteReview:" destination="8tB-hT-vYa" eventType="touchUpInside" id="zg4-T0-q6B"/>
                                                     <segue destination="A8l-Tf-qPt" kind="show" identifier="showReviewController" id="VZv-f9-IR5"/>
@@ -626,6 +626,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="YJQ-Ad-g1a"/>
                     <connections>
+                        <outlet property="starsCat1" destination="EAe-ze-Ef7" id="Urg-15-ntp"/>
+                        <outlet property="starsCat2" destination="z0d-Ld-be0" id="Cqj-ZE-S3R"/>
+                        <outlet property="starsCat3" destination="lB9-94-cs7" id="nMm-jS-Zal"/>
+                        <outlet property="starsCat4" destination="TRi-aL-hbz" id="44X-S5-C7v"/>
                         <outlet property="textReview" destination="p4z-Fa-Lgh" id="orJ-D7-hux"/>
                     </connections>
                 </viewController>

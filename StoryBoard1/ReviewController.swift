@@ -9,13 +9,79 @@
 import UIKit
 
 class ReviewController: UIViewController, UITextViewDelegate {
+    
+    // MARK: Properties
 
     @IBOutlet weak var textReview: UITextView!
+    @IBOutlet weak var starsCat1: RatingControl!
+    @IBOutlet weak var starsCat2: RatingControl!
+    @IBOutlet weak var starsCat3: RatingControl!
+    @IBOutlet weak var starsCat4: RatingControl!
+    
+    // MARK: Actions
     
     @IBAction func submitReview(_ sender: Any) {
         print(textReview.text!)
+        
+        // TODO: create popup
+        guard starsCat1.rating > 0 else {
+            alertUnfilledForm()
+            return
+        }
+        
+        guard starsCat2.rating > 0 else {
+            alertUnfilledForm()
+            return
+        }
+        
+        guard starsCat3.rating > 0 else {
+            alertUnfilledForm()
+            return
+        }
+        
+        guard starsCat4.rating > 0 else {
+            alertUnfilledForm()
+            return
+        }
+        
+        // TODO: create a popup that says the review has been submitted
+        alertReviewSubmitted()
+        
     }
     
+    func alertUnfilledForm() {
+        let defaultAction = UIAlertAction(title: "Ok", style: .default) { (action) in
+        }
+        
+        // Create and configure the alert controller.
+        let alert = UIAlertController(title: "Unfilled Ratings",
+              message: "Please leave a rating for all categories",
+              preferredStyle: .alert)
+        alert.addAction(defaultAction)
+        
+        self.present(alert, animated: true) {
+            // The alert was presented
+        }
+    }
+    
+    func alertReviewSubmitted() {
+        let defaultAction = UIAlertAction(title:
+            "Ok", style: .default) { (action) in
+        }
+        
+        let alert = UIAlertController(title: "Review Submitted",
+              message: "Debug, not actually submitted yet",
+              preferredStyle: .alert)
+        alert.addAction(defaultAction)
+        
+        
+        self.present(alert, animated: true) {
+            // The alert was presented
+        }
+    }
+    
+    
+    // MARK: Init
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -38,7 +104,7 @@ class ReviewController: UIViewController, UITextViewDelegate {
         notificationCenter.addObserver(self, selector: #selector(adjustForKeyboard), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
     }
     
-    // MARK: placeholder
+    // MARK: placeholder text
     
     func textViewDidBeginEditing (_ textView: UITextView) {
         if textReview.textColor == UIColor.lightGray && textReview.isFirstResponder {

@@ -81,6 +81,7 @@ class ViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDel
         
         // search bar button
         makeButton()
+        
 }
 
     

@@ -9,6 +9,7 @@
 import UIKit
 import GooglePlaces
 import FirebaseAuth
+import Firebase
 
 class NewController: UIViewController {
     
@@ -41,6 +42,7 @@ class NewController: UIViewController {
     // Firebase Auth
     var handle: AuthStateDidChangeListenerHandle?
     var user: User?
+    var db: Firestore!
     
     
     // MARK: Actions
@@ -64,12 +66,25 @@ class NewController: UIViewController {
     @IBAction func myUnwindAction(unwindSegue: UIStoryboardSegue) {}
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
         handle = Auth.auth().addStateDidChangeListener { (auth, user) in
             self.user = user
         }
     }
-    
     // TODO: add viewWillDisappear func
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        Auth.auth().removeStateDidChangeListener(handle!)
+    }
+    
+    // prepare for segue to reviewController
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? ReviewController {
+            vc.placeID = placeID
+            vc.placeName = name
+        }
+    }
+    
     
     // MARK: Alert
     func alertNotSignedIn() {
@@ -91,6 +106,8 @@ class NewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     
+        db = Firestore.firestore()
+        
         // MARK: display text
         
         // Update UI with POI info
@@ -152,7 +169,49 @@ class NewController: UIViewController {
 //        reviewStack.addArrangedSubview(review0)
 //        reviewStack.addArrangedSubview(review1)
 //        reviewStack.addArrangedSubview(review2)
-//        
+//
+        // update ratings info
+        displayRatings()
+        
+    }
+    
+    // MARK: Read from Firebase
+    func displayRatings() {
+        db.collection("businesses").document(placeID!).collection("reviews").getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                var avgRatingOverall: Float = 0.0
+                var avgRating1: Float = 0.0
+                var avgRating2: Float = 0.0
+                var avgRating3: Float = 0.0
+                var avgRating4: Float = 0.0
+                var numRatings: Float = 0.0
+                for document in querySnapshot!.documents {
+//                  print("\(document.documentID) => \(document.data())")
+                    numRatings += 1
+                    avgRating1 += document.get("rating1") as! Float
+                    avgRating2 += document.get("rating2") as! Float
+                    avgRating3 += document.get("rating3") as! Float
+                    avgRating4 += document.get("rating4") as! Float
+                    avgRatingOverall += avgRating1 + avgRating2 + avgRating3 + avgRating4
+                    avgRatingOverall /= 4
+                }
+                avgRating1 /= numRatings
+                avgRating2 /= numRatings
+                avgRating3 /= numRatings
+                avgRating4 /= numRatings
+                avgRatingOverall /= numRatings
+                
+                // set the views
+                self.starsOverall.rating = avgRatingOverall
+                self.starsCat1.rating = avgRating1
+                self.starsCat2.rating = avgRating2
+                self.starsCat3.rating = avgRating3
+                self.starsCat4.rating = avgRating4
+            }
+            
+        }
         
     }
     

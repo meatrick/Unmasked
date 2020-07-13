@@ -20,7 +20,14 @@ class ReviewController: UIViewController, UITextViewDelegate {
     @IBOutlet weak var starsCat3: RatingControl!
     @IBOutlet weak var starsCat4: RatingControl!
     
+    var placeID: String?
+    var placeName: String?
+    var user: User?
+    
     var db: Firestore!
+    
+    var handle: AuthStateDidChangeListenerHandle?
+
     
     // MARK: Actions
     
@@ -48,8 +55,29 @@ class ReviewController: UIViewController, UITextViewDelegate {
             return
         }
         
-        // TODO: submit the review to the db
-        db
+        // MARK: Firestore
+        // get ref to place
+        let placeRef = db.collection("businesses").document(placeID!)
+        
+        // ensure that the place's name is stored in the db
+        placeRef.updateData([
+            "name": placeName!])
+        
+        // add the review to the db
+        var reviewRef: DocumentReference? = nil
+        reviewRef = placeRef.collection("reviews").addDocument(data: [
+            "textReview": textReview.text!,
+            "rating1": starsCat1.rating,
+            "rating2": starsCat2.rating,
+            "rating3": starsCat3.rating,
+            "rating4": starsCat4.rating,
+            "UserID": user!.uid,]) { err in
+                if let err = err {
+                    print("Error adding document: \(err)")
+                } else {
+                    print("Document added with ID: \(reviewRef!.documentID)")
+                }
+            }
         
         // create a popup that says the review has been submitted
         alertReviewSubmitted()
@@ -89,7 +117,7 @@ class ReviewController: UIViewController, UITextViewDelegate {
     }
     
     
-    // MARK: viewDidLoad
+    // MARK: viewLoading
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -114,6 +142,18 @@ class ReviewController: UIViewController, UITextViewDelegate {
         // Firestore
         db = Firestore.firestore()
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        handle = Auth.auth().addStateDidChangeListener { (auth, user) in
+            self.user = user
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        Auth.auth().removeStateDidChangeListener(handle!)
     }
     
     // MARK: placeholder text

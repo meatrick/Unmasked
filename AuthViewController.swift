@@ -56,7 +56,7 @@ class AuthViewController: UIViewController {
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillAppear(true)
+        super.viewWillDisappear(true)
         Auth.auth().removeStateDidChangeListener(handle!)
     }
     

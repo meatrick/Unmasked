@@ -187,6 +187,7 @@ class NewController: UIViewController {
                 var avgRating3: Float = 0.0
                 var avgRating4: Float = 0.0
                 var numRatings: Int = 0
+                var textReviews: [String?] = []
                 for document in querySnapshot!.documents {
 //                  print("\(document.documentID) => \(document.data())")
                     numRatings += 1
@@ -196,6 +197,8 @@ class NewController: UIViewController {
                     avgRating4 += document.get("rating4") as! Float
                     avgRatingOverall += avgRating1 + avgRating2 + avgRating3 + avgRating4
                     avgRatingOverall /= 4
+                    let textReview: String = document.get("textReview") as! String
+                    textReviews.append(textReview)
                 }
                 avgRating1 /= Float(numRatings)
                 avgRating2 /= Float(numRatings)
@@ -212,6 +215,8 @@ class NewController: UIViewController {
                 self.displayedStars.rating = avgRatingOverall
                 self.displayedRatingNum.text = String(format: "%.1f", avgRatingOverall)
                 self.displayedNumReviews.text = "(" + String(numRatings) + ")"
+                
+                self.review0.reviewText.text = textReviews[0]
             }
             
         }

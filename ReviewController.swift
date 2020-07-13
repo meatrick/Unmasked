@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
 
 class ReviewController: UIViewController, UITextViewDelegate {
     
@@ -17,6 +19,8 @@ class ReviewController: UIViewController, UITextViewDelegate {
     @IBOutlet weak var starsCat2: RatingControl!
     @IBOutlet weak var starsCat3: RatingControl!
     @IBOutlet weak var starsCat4: RatingControl!
+    
+    var db: Firestore!
     
     // MARK: Actions
     
@@ -44,11 +48,15 @@ class ReviewController: UIViewController, UITextViewDelegate {
             return
         }
         
-        // TODO: create a popup that says the review has been submitted
+        // TODO: submit the review to the db
+        db
+        
+        // create a popup that says the review has been submitted
         alertReviewSubmitted()
         
     }
     
+    // MARK: Alerts
     func alertUnfilledForm() {
         let defaultAction = UIAlertAction(title: "Ok", style: .default) { (action) in
         }
@@ -81,7 +89,7 @@ class ReviewController: UIViewController, UITextViewDelegate {
     }
     
     
-    // MARK: Init
+    // MARK: viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -102,6 +110,10 @@ class ReviewController: UIViewController, UITextViewDelegate {
         let notificationCenter = NotificationCenter.default
         notificationCenter.addObserver(self, selector: #selector(adjustForKeyboard), name: UIResponder.keyboardWillHideNotification, object: nil)
         notificationCenter.addObserver(self, selector: #selector(adjustForKeyboard), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+        
+        // Firestore
+        db = Firestore.firestore()
+        
     }
     
     // MARK: placeholder text

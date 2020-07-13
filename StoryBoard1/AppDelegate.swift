@@ -23,10 +23,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         GMSServices.provideAPIKey("AIzaSyAZp0ioBR22zyq_K-V1nkNPBQzOGQio6zU")
         GMSPlacesClient.provideAPIKey("AIzaSyAZp0ioBR22zyq_K-V1nkNPBQzOGQio6zU")
         
-        
+        // Firebase init
         FirebaseApp.configure()
+        
+        // Google Sign-in
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
         GIDSignIn.sharedInstance().delegate = self
+        
+        // Firestore init
+        let db = Firestore.firestore()
+
         
         
         

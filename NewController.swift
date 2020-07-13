@@ -69,6 +69,9 @@ class NewController: UIViewController {
         }
     }
     
+    // TODO: add viewWillDisappear func
+    
+    // MARK: Alert
     func alertNotSignedIn() {
         let defaultAction = UIAlertAction(title:
             "Ok", style: .default) { (action) in

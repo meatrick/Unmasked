@@ -19,6 +19,8 @@
 		AF63DA8824BBE8BA00CF2F2A /* FirebaseRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF63DA8724BBE8BA00CF2F2A /* FirebaseRegister.swift */; };
 		AF63DA8A24BBEA2000CF2F2A /* FirebaseLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF63DA8924BBEA2000CF2F2A /* FirebaseLogin.swift */; };
 		AF63DA8C24BBEDCD00CF2F2A /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF63DA8B24BBEDCD00CF2F2A /* AuthViewController.swift */; };
+		AF979CE624BCF8A1001D62F3 /* Business.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF979CE524BCF8A1001D62F3 /* Business.swift */; };
+		AF979CE824BCF956001D62F3 /* UserReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF979CE724BCF956001D62F3 /* UserReview.swift */; };
 		AFA0F70224A6D5CF002C94B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA0F70124A6D5CF002C94B1 /* AppDelegate.swift */; };
 		AFA0F70424A6D5CF002C94B1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA0F70324A6D5CF002C94B1 /* SceneDelegate.swift */; };
 		AFA0F70624A6D5CF002C94B1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA0F70524A6D5CF002C94B1 /* ViewController.swift */; };
@@ -64,6 +66,8 @@
 		AF63DA8724BBE8BA00CF2F2A /* FirebaseRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseRegister.swift; sourceTree = "<group>"; };
 		AF63DA8924BBEA2000CF2F2A /* FirebaseLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseLogin.swift; sourceTree = "<group>"; };
 		AF63DA8B24BBEDCD00CF2F2A /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		AF979CE524BCF8A1001D62F3 /* Business.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Business.swift; sourceTree = "<group>"; };
+		AF979CE724BCF956001D62F3 /* UserReview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserReview.swift; sourceTree = "<group>"; };
 		AFA0F6FE24A6D5CF002C94B1 /* StoryBoard1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StoryBoard1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFA0F70124A6D5CF002C94B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AFA0F70324A6D5CF002C94B1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -126,6 +130,41 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		AF979CE324BCF775001D62F3 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				AF63DA8B24BBEDCD00CF2F2A /* AuthViewController.swift */,
+				AFA0F70524A6D5CF002C94B1 /* ViewController.swift */,
+				AFA0F77F24ABDBE2002C94B1 /* NewController.swift */,
+				AF63DA4424B7C20100CF2F2A /* ReviewController.swift */,
+				AF979CE424BCF879001D62F3 /* Models */,
+			);
+			name = "View Controllers";
+			path = ..;
+			sourceTree = "<group>";
+		};
+		AF979CE424BCF879001D62F3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AF979CE524BCF8A1001D62F3 /* Business.swift */,
+				AF979CE724BCF956001D62F3 /* UserReview.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		AF979CE924BCFC99001D62F3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AF63DA7B24B7FBE400CF2F2A /* Review.xib */,
+				AF63DA7D24B7FBF100CF2F2A /* Review.swift */,
+				AF63DA7F24BA59F500CF2F2A /* StarRatingStackView.swift */,
+				AF63DA8024BA59F500CF2F2A /* StarRatingStackView.xib */,
+				AF63DA8124BA59F500CF2F2A /* StarRatingView.swift */,
+				AF63DA4E24B7EBA200CF2F2A /* ReviewStack.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		AFA0F6F524A6D5CF002C94B1 = {
 			isa = PBXGroup;
 			children = (
@@ -152,26 +191,18 @@
 		AFA0F70024A6D5CF002C94B1 /* StoryBoard1 */ = {
 			isa = PBXGroup;
 			children = (
+				AF979CE924BCFC99001D62F3 /* Views */,
+				AF979CE324BCF775001D62F3 /* View Controllers */,
 				AF63DA8524BAA48E00CF2F2A /* GoogleService-Info.plist */,
 				AF63DA4C24B7CC4800CF2F2A /* RatingControl.swift */,
 				AFA0F70124A6D5CF002C94B1 /* AppDelegate.swift */,
-				AFA0F77F24ABDBE2002C94B1 /* NewController.swift */,
 				AFA0F70324A6D5CF002C94B1 /* SceneDelegate.swift */,
-				AF63DA8B24BBEDCD00CF2F2A /* AuthViewController.swift */,
 				AF63DA8724BBE8BA00CF2F2A /* FirebaseRegister.swift */,
 				AF63DA8924BBEA2000CF2F2A /* FirebaseLogin.swift */,
-				AFA0F70524A6D5CF002C94B1 /* ViewController.swift */,
 				AFA0F70724A6D5CF002C94B1 /* Main.storyboard */,
-				AF63DA7F24BA59F500CF2F2A /* StarRatingStackView.swift */,
-				AF63DA8024BA59F500CF2F2A /* StarRatingStackView.xib */,
-				AF63DA8124BA59F500CF2F2A /* StarRatingView.swift */,
-				AF63DA4E24B7EBA200CF2F2A /* ReviewStack.swift */,
-				AF63DA4424B7C20100CF2F2A /* ReviewController.swift */,
 				AFA0F70A24A6D5D1002C94B1 /* Assets.xcassets */,
 				AFA0F70C24A6D5D1002C94B1 /* LaunchScreen.storyboard */,
 				AFA0F70F24A6D5D1002C94B1 /* Info.plist */,
-				AF63DA7B24B7FBE400CF2F2A /* Review.xib */,
-				AF63DA7D24B7FBF100CF2F2A /* Review.swift */,
 			);
 			path = StoryBoard1;
 			sourceTree = "<group>";
@@ -392,8 +423,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF63DA8A24BBEA2000CF2F2A /* FirebaseLogin.swift in Sources */,
+				AF979CE624BCF8A1001D62F3 /* Business.swift in Sources */,
 				AFA0F78024ABDBE2002C94B1 /* NewController.swift in Sources */,
 				AF63DA8224BA59F600CF2F2A /* StarRatingStackView.swift in Sources */,
+				AF979CE824BCF956001D62F3 /* UserReview.swift in Sources */,
 				AF63DA7E24B7FBF100CF2F2A /* Review.swift in Sources */,
 				AF63DA8424BA59F600CF2F2A /* StarRatingView.swift in Sources */,
 				AFA0F70624A6D5CF002C94B1 /* ViewController.swift in Sources */,

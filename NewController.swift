@@ -186,7 +186,7 @@ class NewController: UIViewController {
                 var avgRating2: Float = 0.0
                 var avgRating3: Float = 0.0
                 var avgRating4: Float = 0.0
-                var numRatings: Float = 0.0
+                var numRatings: Int = 0
                 for document in querySnapshot!.documents {
 //                  print("\(document.documentID) => \(document.data())")
                     numRatings += 1
@@ -197,11 +197,11 @@ class NewController: UIViewController {
                     avgRatingOverall += avgRating1 + avgRating2 + avgRating3 + avgRating4
                     avgRatingOverall /= 4
                 }
-                avgRating1 /= numRatings
-                avgRating2 /= numRatings
-                avgRating3 /= numRatings
-                avgRating4 /= numRatings
-                avgRatingOverall /= numRatings
+                avgRating1 /= Float(numRatings)
+                avgRating2 /= Float(numRatings)
+                avgRating3 /= Float(numRatings)
+                avgRating4 /= Float(numRatings)
+                avgRatingOverall /= Float(numRatings)
                 
                 // set the views
                 self.starsOverall.rating = avgRatingOverall
@@ -209,6 +209,9 @@ class NewController: UIViewController {
                 self.starsCat2.rating = avgRating2
                 self.starsCat3.rating = avgRating3
                 self.starsCat4.rating = avgRating4
+                self.displayedStars.rating = avgRatingOverall
+                self.displayedRatingNum.text = String(format: "%.1f", avgRatingOverall)
+                self.displayedNumReviews.text = "(" + String(numRatings) + ")"
             }
             
         }

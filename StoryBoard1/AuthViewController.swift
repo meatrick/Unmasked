@@ -16,7 +16,16 @@ import FirebaseStorage
 
 
 class AuthViewController: UIViewController {
-
+    var handle: AuthStateDidChangeListenerHandle?
+    
+    @IBAction func signOut(_ sender: Any) {
+        do {
+            try Auth.auth().signOut()
+        } catch let signOutError as NSError {
+          print ("Error signing out: %@", signOutError)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -26,7 +35,29 @@ class AuthViewController: UIViewController {
         // Automatically sign in the user.
         GIDSignIn.sharedInstance()?.restorePreviousSignIn()
         
-        print("loaded")
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        handle = Auth.auth().addStateDidChangeListener { (auth, user) in
+//            print(user ?? "user error")
+            if let user = user {
+                let uid = user.uid
+                print("User id: \(uid)")
+                
+                // move to next vc
+                self.performSegue(withIdentifier: "showMapView", sender: nil)
+                
+            } else {
+                print("No user")
+            }
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        Auth.auth().removeStateDidChangeListener(handle!)
     }
     
 

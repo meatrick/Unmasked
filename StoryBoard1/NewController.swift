@@ -8,6 +8,7 @@
 
 import UIKit
 import GooglePlaces
+import FirebaseAuth
 
 class NewController: UIViewController {
     
@@ -37,14 +38,52 @@ class NewController: UIViewController {
     var placesClient: GMSPlacesClient?
     var place: GMSPlace!
     
+    // Firebase Auth
+    var handle: AuthStateDidChangeListenerHandle?
+    var user: User?
+    
     
     // MARK: Actions
     @IBAction func btnWriteReview(_ sender: Any) {
-        // segue to ReviewController
-        performSegue(withIdentifier: "showReviewController", sender: nil)
+        if user != nil {
+            // segue to ReviewController
+            performSegue(withIdentifier: "showReviewController", sender: nil)
+        } else {
+            alertNotSignedIn()
+        }
+    }
+    
+    @IBAction func signOut(_ sender: Any) {
+        do {
+            try Auth.auth().signOut()
+        } catch let signOutError as NSError {
+            print ("Error signing out: %@", signOutError)
+        }
     }
     
     @IBAction func myUnwindAction(unwindSegue: UIStoryboardSegue) {}
+    
+    override func viewWillAppear(_ animated: Bool) {
+        handle = Auth.auth().addStateDidChangeListener { (auth, user) in
+            self.user = user
+        }
+    }
+    
+    func alertNotSignedIn() {
+        let defaultAction = UIAlertAction(title:
+            "Ok", style: .default) { (action) in
+        }
+        
+        let alert = UIAlertController(title: "Not Signed In",
+              message: "You must be signed in to leave a review",
+              preferredStyle: .alert)
+        alert.addAction(defaultAction)
+        
+        
+        self.present(alert, animated: true) {
+            // The alert was presented
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5AEC9EFA123A5FC33FBCF4AD /* libPods-StoryBoard1.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EE4A894E1744B3C894798FC /* libPods-StoryBoard1.a */; };
 		AF63DA4524B7C20100CF2F2A /* ReviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF63DA4424B7C20100CF2F2A /* ReviewController.swift */; };
 		AF63DA4D24B7CC4800CF2F2A /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF63DA4C24B7CC4800CF2F2A /* RatingControl.swift */; };
 		AF63DA4F24B7EBA200CF2F2A /* ReviewStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF63DA4E24B7EBA200CF2F2A /* ReviewStack.swift */; };
@@ -17,6 +16,9 @@
 		AF63DA8324BA59F600CF2F2A /* StarRatingStackView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF63DA8024BA59F500CF2F2A /* StarRatingStackView.xib */; };
 		AF63DA8424BA59F600CF2F2A /* StarRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF63DA8124BA59F500CF2F2A /* StarRatingView.swift */; };
 		AF63DA8624BAA48F00CF2F2A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AF63DA8524BAA48E00CF2F2A /* GoogleService-Info.plist */; };
+		AF63DA8824BBE8BA00CF2F2A /* FirebaseRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF63DA8724BBE8BA00CF2F2A /* FirebaseRegister.swift */; };
+		AF63DA8A24BBEA2000CF2F2A /* FirebaseLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF63DA8924BBEA2000CF2F2A /* FirebaseLogin.swift */; };
+		AF63DA8C24BBEDCD00CF2F2A /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF63DA8B24BBEDCD00CF2F2A /* AuthViewController.swift */; };
 		AFA0F70224A6D5CF002C94B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA0F70124A6D5CF002C94B1 /* AppDelegate.swift */; };
 		AFA0F70424A6D5CF002C94B1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA0F70324A6D5CF002C94B1 /* SceneDelegate.swift */; };
 		AFA0F70624A6D5CF002C94B1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA0F70524A6D5CF002C94B1 /* ViewController.swift */; };
@@ -27,6 +29,7 @@
 		AFA0F72424A6D5D1002C94B1 /* StoryBoard1UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA0F72324A6D5D1002C94B1 /* StoryBoard1UITests.swift */; };
 		AFA0F77824A80183002C94B1 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = AFA0F77724A80183002C94B1 /* Podfile */; };
 		AFA0F78024ABDBE2002C94B1 /* NewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA0F77F24ABDBE2002C94B1 /* NewController.swift */; };
+		BD94EDAAB044AF261D60533B /* Pods_StoryBoard1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 599CD6DDA22B31ECC9F84BA5 /* Pods_StoryBoard1.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,8 +50,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4EE4A894E1744B3C894798FC /* libPods-StoryBoard1.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-StoryBoard1.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		56A996607821F233E813DDA5 /* Pods-StoryBoard1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StoryBoard1.release.xcconfig"; path = "Target Support Files/Pods-StoryBoard1/Pods-StoryBoard1.release.xcconfig"; sourceTree = "<group>"; };
+		599CD6DDA22B31ECC9F84BA5 /* Pods_StoryBoard1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StoryBoard1.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF63DA4424B7C20100CF2F2A /* ReviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewController.swift; sourceTree = "<group>"; };
 		AF63DA4C24B7CC4800CF2F2A /* RatingControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RatingControl.swift; path = /Users/jennasmith/Projects/StoryBoard1/StoryBoard1/RatingControl.swift; sourceTree = "<absolute>"; };
 		AF63DA4E24B7EBA200CF2F2A /* ReviewStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewStack.swift; sourceTree = "<group>"; };
@@ -58,6 +61,9 @@
 		AF63DA8024BA59F500CF2F2A /* StarRatingStackView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StarRatingStackView.xib; sourceTree = "<group>"; };
 		AF63DA8124BA59F500CF2F2A /* StarRatingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StarRatingView.swift; sourceTree = "<group>"; };
 		AF63DA8524BAA48E00CF2F2A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		AF63DA8724BBE8BA00CF2F2A /* FirebaseRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseRegister.swift; sourceTree = "<group>"; };
+		AF63DA8924BBEA2000CF2F2A /* FirebaseLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseLogin.swift; sourceTree = "<group>"; };
+		AF63DA8B24BBEDCD00CF2F2A /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		AFA0F6FE24A6D5CF002C94B1 /* StoryBoard1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StoryBoard1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFA0F70124A6D5CF002C94B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AFA0F70324A6D5CF002C94B1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -82,7 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5AEC9EFA123A5FC33FBCF4AD /* libPods-StoryBoard1.a in Frameworks */,
+				BD94EDAAB044AF261D60533B /* Pods_StoryBoard1.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,7 +121,7 @@
 		6D3D7CF3FBEB240342CB0934 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4EE4A894E1744B3C894798FC /* libPods-StoryBoard1.a */,
+				599CD6DDA22B31ECC9F84BA5 /* Pods_StoryBoard1.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -151,6 +157,9 @@
 				AFA0F70124A6D5CF002C94B1 /* AppDelegate.swift */,
 				AFA0F77F24ABDBE2002C94B1 /* NewController.swift */,
 				AFA0F70324A6D5CF002C94B1 /* SceneDelegate.swift */,
+				AF63DA8B24BBEDCD00CF2F2A /* AuthViewController.swift */,
+				AF63DA8724BBE8BA00CF2F2A /* FirebaseRegister.swift */,
+				AF63DA8924BBEA2000CF2F2A /* FirebaseLogin.swift */,
 				AFA0F70524A6D5CF002C94B1 /* ViewController.swift */,
 				AFA0F70724A6D5CF002C94B1 /* Main.storyboard */,
 				AF63DA7F24BA59F500CF2F2A /* StarRatingStackView.swift */,
@@ -197,6 +206,7 @@
 				AFA0F6FB24A6D5CF002C94B1 /* Frameworks */,
 				AFA0F6FC24A6D5CF002C94B1 /* Resources */,
 				A80BF5C9545A4B40414AE2FD /* [CP] Copy Pods Resources */,
+				928B91FD16EF99BEB3C55FAF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -340,6 +350,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		928B91FD16EF99BEB3C55FAF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-StoryBoard1/Pods-StoryBoard1-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-StoryBoard1/Pods-StoryBoard1-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-StoryBoard1/Pods-StoryBoard1-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		A80BF5C9545A4B40414AE2FD /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -364,12 +391,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF63DA8A24BBEA2000CF2F2A /* FirebaseLogin.swift in Sources */,
 				AFA0F78024ABDBE2002C94B1 /* NewController.swift in Sources */,
 				AF63DA8224BA59F600CF2F2A /* StarRatingStackView.swift in Sources */,
 				AF63DA7E24B7FBF100CF2F2A /* Review.swift in Sources */,
 				AF63DA8424BA59F600CF2F2A /* StarRatingView.swift in Sources */,
 				AFA0F70624A6D5CF002C94B1 /* ViewController.swift in Sources */,
+				AF63DA8824BBE8BA00CF2F2A /* FirebaseRegister.swift in Sources */,
 				AF63DA4F24B7EBA200CF2F2A /* ReviewStack.swift in Sources */,
+				AF63DA8C24BBEDCD00CF2F2A /* AuthViewController.swift in Sources */,
 				AF63DA4D24B7CC4800CF2F2A /* RatingControl.swift in Sources */,
 				AFA0F70224A6D5CF002C94B1 /* AppDelegate.swift in Sources */,
 				AFA0F70424A6D5CF002C94B1 /* SceneDelegate.swift in Sources */,

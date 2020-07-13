@@ -9,8 +9,9 @@
 import UIKit
 import GoogleMaps
 import GooglePlaces
+import FirebaseUI
 
-class ViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDelegate {
+class ViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDelegate, FUIAuthDelegate {
     
     // MARK: Properties
     
@@ -61,7 +62,8 @@ class ViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDel
 //        self.view.addSubview(mapView)
         
         
-//      location services
+        
+        //      location services
         mapView.settings.compassButton = true
         mapView.isMyLocationEnabled = true
         mapView.settings.myLocationButton = true

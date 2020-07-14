@@ -44,6 +44,8 @@ class NewController: UIViewController {
     var user: User?
     var db: Firestore!
     
+    var textReviews: [String?] = []
+    
     
     // MARK: Actions
     @IBAction func btnWriteReview(_ sender: Any) {
@@ -55,6 +57,9 @@ class NewController: UIViewController {
         }
     }
     
+    @IBAction func btnSeeReviews(_ sender: Any) {
+        performSegue(withIdentifier: "showAllReviewsController", sender: nil)
+    }
     // MARK: Sign Out
 //    @IBAction func signOut(_ sender: Any) {
 //        do {
@@ -78,11 +83,14 @@ class NewController: UIViewController {
         Auth.auth().removeStateDidChangeListener(handle!)
     }
     
-    // prepare for segue to reviewController
+    // MARK: segues
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let vc = segue.destination as? ReviewController {
             vc.placeID = placeID
             vc.placeName = name
+        }
+        else if let vc = segue.destination as? SeeReviewsController {
+            vc.reviews = self.textReviews
         }
     }
     
@@ -188,7 +196,6 @@ class NewController: UIViewController {
                 var avgRating3: Float = 0.0
                 var avgRating4: Float = 0.0
                 var numRatings: Int = 0
-                var textReviews: [String?] = []
                 for document in querySnapshot!.documents {
 //                  print("\(document.documentID) => \(document.data())")
                     numRatings += 1
@@ -199,7 +206,7 @@ class NewController: UIViewController {
                     avgRatingOverall += avgRating1 + avgRating2 + avgRating3 + avgRating4
                     avgRatingOverall /= 4
                     let textReview: String = document.get("textReview") as! String
-                    textReviews.append(textReview)
+                    self.textReviews.append(textReview)
                 }
                 avgRating1 /= Float(numRatings)
                 avgRating2 /= Float(numRatings)
@@ -219,13 +226,13 @@ class NewController: UIViewController {
                 
                 // MARK: display 3 reviews
                 var counter = 0
-                while counter < 3 && counter < textReviews.count {
+                while counter < 3 && counter < self.textReviews.count {
                     if counter == 0 {
-                        self.review0.reviewText.text = textReviews[0]
+                        self.review0.reviewText.text = self.textReviews[0]
                     } else if counter == 1 {
-                        self.review1.reviewText.text = textReviews[1]
+                        self.review1.reviewText.text = self.textReviews[1]
                     } else if counter == 2 {
-                        self.review2.reviewText.text = textReviews[2]
+                        self.review2.reviewText.text = self.textReviews[2]
                     }
                     counter += 1
                 }

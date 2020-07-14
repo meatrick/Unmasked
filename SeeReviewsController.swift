@@ -10,10 +10,19 @@ import UIKit
 
 class SeeReviewsController: UIViewController {
 
+    var reviews: [String?]?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+        addReviews()
     }
 
+    func addReviews() {
+        for review in reviews! {
+            let r = Review()
+            r.reviewText.text = review
+            view.addSubview(r)
+        }
+    }
 }

@@ -289,7 +289,8 @@
                                                 </constraints>
                                                 <state key="normal" title="See All Reviews (x)"/>
                                                 <connections>
-                                                    <segue destination="drY-pG-xkB" kind="show" id="tBP-Zl-cV0"/>
+                                                    <action selector="btnSeeReviews:" destination="8tB-hT-vYa" eventType="touchUpInside" id="hOf-zf-Unx"/>
+                                                    <segue destination="drY-pG-xkB" kind="show" identifier="showAllReviewsController" id="tBP-Zl-cV0"/>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="(number of ratings)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jla-0K-nGw">
@@ -679,10 +680,10 @@
             </objects>
             <point key="canvasLocation" x="2176.8000000000002" y="91.625615763546804"/>
         </scene>
-        <!--View Controller-->
+        <!--See Reviews Controller-->
         <scene sceneID="pbs-yL-ygk">
             <objects>
-                <viewController id="drY-pG-xkB" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="showAllReviewsController" id="drY-pG-xkB" customClass="SeeReviewsController" customModule="StoryBoard1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="i8R-vI-Skq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

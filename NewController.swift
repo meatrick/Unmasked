@@ -217,8 +217,17 @@ class NewController: UIViewController {
                 self.displayedRatingNum.text = String(format: "%.1f", avgRatingOverall)
                 self.displayedNumReviews.text = "(" + String(numRatings) + ")"
                 
-                if !textReviews.isEmpty {
-                    self.review0.reviewText.text = textReviews[0] 
+                // MARK: display 3 reviews
+                var counter = 0
+                while counter < 3 && counter < textReviews.count {
+                    if counter == 0 {
+                        self.review0.reviewText.text = textReviews[0]
+                    } else if counter == 1 {
+                        self.review1.reviewText.text = textReviews[1]
+                    } else if counter == 2 {
+                        self.review2.reviewText.text = textReviews[2]
+                    }
+                    counter += 1
                 }
             }
             

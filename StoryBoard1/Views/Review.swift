@@ -12,7 +12,7 @@ class Review: UIView {
     // MARK: Properties
     
     @IBOutlet var contentView: UIView!
-    @IBOutlet weak var reviewText: UILabel!
+    @IBOutlet weak var reviewText: UITextView!
     
 //    var rating: Int
         

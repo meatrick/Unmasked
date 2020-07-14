@@ -55,13 +55,14 @@ class NewController: UIViewController {
         }
     }
     
-    @IBAction func signOut(_ sender: Any) {
-        do {
-            try Auth.auth().signOut()
-        } catch let signOutError as NSError {
-            print ("Error signing out: %@", signOutError)
-        }
-    }
+    // MARK: Sign Out
+//    @IBAction func signOut(_ sender: Any) {
+//        do {
+//            try Auth.auth().signOut()
+//        } catch let signOutError as NSError {
+//            print ("Error signing out: %@", signOutError)
+//        }
+//    }
     
     @IBAction func myUnwindAction(unwindSegue: UIStoryboardSegue) {}
     
@@ -216,7 +217,9 @@ class NewController: UIViewController {
                 self.displayedRatingNum.text = String(format: "%.1f", avgRatingOverall)
                 self.displayedNumReviews.text = "(" + String(numRatings) + ")"
                 
-                self.review0.reviewText.text = textReviews[0]
+                if !textReviews.isEmpty {
+                    self.review0.reviewText.text = textReviews[0] 
+                }
             }
             
         }

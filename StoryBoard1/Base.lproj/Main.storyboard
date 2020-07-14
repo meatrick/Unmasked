@@ -288,6 +288,9 @@
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="cwh-Bo-3Ac"/>
                                                 </constraints>
                                                 <state key="normal" title="See All Reviews (x)"/>
+                                                <connections>
+                                                    <segue destination="drY-pG-xkB" kind="show" id="tBP-Zl-cV0"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="(number of ratings)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jla-0K-nGw">
                                                 <rect key="frame" x="156" y="316" width="211" height="21"/>
@@ -675,6 +678,22 @@
                 <exit id="ATN-kb-YtV" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2176.8000000000002" y="91.625615763546804"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="pbs-yL-ygk">
+            <objects>
+                <viewController id="drY-pG-xkB" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="i8R-vI-Skq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="dqb-Ay-iB4"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="GWk-dR-ert"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GqT-WU-MHM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2177" y="850"/>
         </scene>
     </scenes>
     <resources>

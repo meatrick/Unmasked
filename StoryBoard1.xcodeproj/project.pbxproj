@@ -31,6 +31,7 @@
 		AFA0F72424A6D5D1002C94B1 /* StoryBoard1UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA0F72324A6D5D1002C94B1 /* StoryBoard1UITests.swift */; };
 		AFA0F77824A80183002C94B1 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = AFA0F77724A80183002C94B1 /* Podfile */; };
 		AFA0F78024ABDBE2002C94B1 /* NewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA0F77F24ABDBE2002C94B1 /* NewController.swift */; };
+		AFE9913E24BE732A002312FF /* SeeReviewsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE9913D24BE732A002312FF /* SeeReviewsController.swift */; };
 		BD94EDAAB044AF261D60533B /* Pods_StoryBoard1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 599CD6DDA22B31ECC9F84BA5 /* Pods_StoryBoard1.framework */; };
 /* End PBXBuildFile section */
 
@@ -84,6 +85,7 @@
 		AFA0F72524A6D5D1002C94B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AFA0F77724A80183002C94B1 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		AFA0F77F24ABDBE2002C94B1 /* NewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewController.swift; sourceTree = "<group>"; };
+		AFE9913D24BE732A002312FF /* SeeReviewsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeReviewsController.swift; sourceTree = "<group>"; };
 		B8F364FA363D09D3B3AD94CF /* Pods-StoryBoard1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StoryBoard1.debug.xcconfig"; path = "Target Support Files/Pods-StoryBoard1/Pods-StoryBoard1.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -137,6 +139,7 @@
 				AFA0F70524A6D5CF002C94B1 /* ViewController.swift */,
 				AFA0F77F24ABDBE2002C94B1 /* NewController.swift */,
 				AF63DA4424B7C20100CF2F2A /* ReviewController.swift */,
+				AFE9913D24BE732A002312FF /* SeeReviewsController.swift */,
 			);
 			name = "View Controllers";
 			path = ..;
@@ -442,6 +445,7 @@
 				AF63DA8824BBE8BA00CF2F2A /* FirebaseRegister.swift in Sources */,
 				AF63DA4F24B7EBA200CF2F2A /* ReviewStack.swift in Sources */,
 				AF63DA8C24BBEDCD00CF2F2A /* AuthViewController.swift in Sources */,
+				AFE9913E24BE732A002312FF /* SeeReviewsController.swift in Sources */,
 				AF63DA4D24B7CC4800CF2F2A /* RatingControl.swift in Sources */,
 				AFA0F70224A6D5CF002C94B1 /* AppDelegate.swift in Sources */,
 				AFA0F70424A6D5CF002C94B1 /* SceneDelegate.swift in Sources */,

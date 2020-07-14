@@ -229,6 +229,7 @@ class NewController: UIViewController {
                     }
                     counter += 1
                 }
+
             }
             
         }

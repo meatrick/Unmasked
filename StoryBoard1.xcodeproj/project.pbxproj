@@ -34,8 +34,6 @@
 		AFE9913E24BE732A002312FF /* SeeReviewsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE9913D24BE732A002312FF /* SeeReviewsController.swift */; };
 		AFE9914624BE820F002312FF /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE9914524BE820F002312FF /* Login.swift */; };
 		AFE9914C24BE8877002312FF /* Login.xib in Resources */ = {isa = PBXBuildFile; fileRef = AFE9914B24BE8877002312FF /* Login.xib */; };
-		AFE9914E24BE959F002312FF /* Circle.xib in Resources */ = {isa = PBXBuildFile; fileRef = AFE9914D24BE959F002312FF /* Circle.xib */; };
-		AFE9915024BE95C3002312FF /* Circle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE9914F24BE95C3002312FF /* Circle.swift */; };
 		BD94EDAAB044AF261D60533B /* Pods_StoryBoard1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 599CD6DDA22B31ECC9F84BA5 /* Pods_StoryBoard1.framework */; };
 /* End PBXBuildFile section */
 
@@ -92,8 +90,6 @@
 		AFE9913D24BE732A002312FF /* SeeReviewsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeReviewsController.swift; sourceTree = "<group>"; };
 		AFE9914524BE820F002312FF /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		AFE9914B24BE8877002312FF /* Login.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Login.xib; sourceTree = "<group>"; };
-		AFE9914D24BE959F002312FF /* Circle.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Circle.xib; sourceTree = "<group>"; };
-		AFE9914F24BE95C3002312FF /* Circle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Circle.swift; sourceTree = "<group>"; };
 		B8F364FA363D09D3B3AD94CF /* Pods-StoryBoard1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StoryBoard1.debug.xcconfig"; path = "Target Support Files/Pods-StoryBoard1/Pods-StoryBoard1.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -166,8 +162,6 @@
 			isa = PBXGroup;
 			children = (
 				AFE9914524BE820F002312FF /* Login.swift */,
-				AFE9914D24BE959F002312FF /* Circle.xib */,
-				AFE9914F24BE95C3002312FF /* Circle.swift */,
 				AFE9914B24BE8877002312FF /* Login.xib */,
 				AF63DA7B24B7FBE400CF2F2A /* Review.xib */,
 				AF63DA7D24B7FBF100CF2F2A /* Review.swift */,
@@ -358,7 +352,6 @@
 			files = (
 				AF63DA8324BA59F600CF2F2A /* StarRatingStackView.xib in Resources */,
 				AFA0F70E24A6D5D1002C94B1 /* LaunchScreen.storyboard in Resources */,
-				AFE9914E24BE959F002312FF /* Circle.xib in Resources */,
 				AFA0F70B24A6D5D1002C94B1 /* Assets.xcassets in Resources */,
 				AFE9914C24BE8877002312FF /* Login.xib in Resources */,
 				AF63DA7C24B7FBE400CF2F2A /* Review.xib in Resources */,
@@ -459,7 +452,6 @@
 				AFA0F70624A6D5CF002C94B1 /* ViewController.swift in Sources */,
 				AF63DA8824BBE8BA00CF2F2A /* FirebaseRegister.swift in Sources */,
 				AF63DA4F24B7EBA200CF2F2A /* ReviewStack.swift in Sources */,
-				AFE9915024BE95C3002312FF /* Circle.swift in Sources */,
 				AF63DA8C24BBEDCD00CF2F2A /* AuthViewController.swift in Sources */,
 				AFE9913E24BE732A002312FF /* SeeReviewsController.swift in Sources */,
 				AF63DA4D24B7CC4800CF2F2A /* RatingControl.swift in Sources */,

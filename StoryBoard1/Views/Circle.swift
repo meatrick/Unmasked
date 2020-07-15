@@ -29,8 +29,21 @@ class Circle: UIView {
         contentView.frame = self.bounds
         contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         
-        circleView.layer.cornerRadius = frame.width / 2
-        circleView.layer.masksToBounds = true
-        circleView.backgroundColor = .gray
+//        contentView.layer.cornerRadius = frame.width / 2
+//        contentView.layer.masksToBounds = true
+//        contentView.backgroundColor = .gray
     }
+    
+//    override func layoutSubviews() {
+//        super.layoutSubviews()
+//        if (frame.width != frame.height) {
+//            NSLog("Ended up with a non-square frame -- so it may not be a circle");
+//        }
+//        layer.cornerRadius = frame.width / 2
+//        layer.masksToBounds = true
+//    }
+    
+//    override func drawRect(_ rect: CGRect) {
+//        self.layer.cornerRadius = self.bounds.size.width/2
+//    }
 }

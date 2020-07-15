@@ -214,11 +214,14 @@ class ViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDel
         
 //        Add padding around text
 //        btnLaunchAc.titleEdgeInsets = UIEdgeInsets(top: -10,left: -10,bottom: -10,right: -10)
-        btnLaunchAc.layer.masksToBounds = true
-        btnLaunchAc.layer.cornerRadius = btnLaunchAc.bounds.width / 2
-        btnLaunchAc.contentEdgeInsets = UIEdgeInsets(top: 5,left: 5,bottom: 5,right: 5)
+        btnLaunchAc.contentEdgeInsets = UIEdgeInsets(top: 15,left: 15,bottom: 15,right: 15)
         
-//        btnLaunchAc.frame = CGRect(x: 0,y: 0,width: 50,height: 50)
+
+//        btnLaunchAc.frame = CGRect(x: 0,y: 0,width: 200,height: 200)
+        btnLaunchAc.layer.cornerRadius = 25
+        btnLaunchAc.clipsToBounds = true
+
+        
         
         
         // set image
@@ -365,10 +368,6 @@ extension ViewController: GMSAutocompleteViewControllerDelegate {
         let trailingButtonConstraint = loginBtn.trailingAnchor.constraint(equalTo: margins.trailingAnchor)
         
         trailingButtonConstraint.isActive = true
-        
-        
-        // circle
-        let circle = Circle()
         
         
     }

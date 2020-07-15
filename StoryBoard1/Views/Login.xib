@@ -10,6 +10,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="Login" customModule="StoryBoard1">
             <connections>
                 <outlet property="contentView" destination="iN0-l3-epB" id="Mdy-RJ-cih"/>
+                <outlet property="loginBtn" destination="lp8-59-ndi" id="4QB-GP-Pz4"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>

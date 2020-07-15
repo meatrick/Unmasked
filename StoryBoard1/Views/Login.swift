@@ -11,6 +11,7 @@ import UIKit
 class Login: UIView {
     @IBOutlet var contentView: UIView!
     
+    @IBOutlet var loginBtn: UIButton!
     // MARK: Initialization
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -23,7 +24,7 @@ class Login: UIView {
     }
     
     private func commonInit() {
-        Bundle.main.loadNibNamed("Review", owner: self, options: nil)
+        Bundle.main.loadNibNamed("Login", owner: self, options: nil)
         addSubview(contentView)
         contentView.frame = self.bounds
         contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]

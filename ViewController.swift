@@ -162,7 +162,7 @@ class ViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDel
 
     
     
-    // MARK: Places API
+    // MARK: AutoComplete Clicked
     
     // Present the Autocomplete view controller when the button is pressed.
     @objc func autocompleteClicked(_ sender: UIButton) {
@@ -331,12 +331,31 @@ extension ViewController: GMSAutocompleteViewControllerDelegate {
     
     // MARK: Settings button
     func makeLoginButton() {
-        let settingsBtn = UIButton()
-        settingsBtn.addTarget(self, action: #selector(loginClicked), for: .touchUpInside)
+        let loginView = Login()
+        let loginBtn = loginView.loginBtn!
+        loginBtn.addTarget(self, action: #selector(loginClicked), for: .touchUpInside)
+        
+        loginBtn.frame = CGRect(x: 300, y: 10, width: 50, height: 50)
+        
+        //Button Constraints:
+        loginBtn.translatesAutoresizingMaskIntoConstraints = false
+        
+        let margins = view.layoutMarginsGuide
+        
+        let trailingButtonConstraint = loginBtn.trailingAnchor.constraint(equalTo: margins.trailingAnchor)
+        
+        trailingButtonConstraint.isActive = true
+        
+        
+        self.view.addSubview(loginBtn)
     }
     
     @objc func loginClicked(_ sender: UIButton) {
-        performSegue(withIdentifier: "showSettings", sender: nil)
+//        performSegue(withIdentifier: "showLogin", sender: nil)
+        
+        let authController = AuthViewController()
+        
+        present(authController, animated: true)
     }
 }
 

@@ -24,6 +24,14 @@
                                     <segue destination="8tB-hT-vYa" kind="show" identifier="showInfoPage" id="Ct1-GR-wqW"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jnB-I0-dMO">
+                                <rect key="frame" x="168" y="196" width="38" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Login"/>
+                                <connections>
+                                    <segue destination="dQm-4n-mL8" kind="show" identifier="showLogin" id="drR-HA-07C"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -418,7 +426,7 @@
             <objects>
                 <viewController id="dQm-4n-mL8" userLabel="AuthController" customClass="AuthViewController" customModule="StoryBoard1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5YC-6k-XTa">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Sfg-aj-P3a" customClass="GIDSignInButton">
@@ -446,6 +454,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="EYE-BG-RQN"/>
                     </view>
+                    <navigationItem key="navigationItem" id="j2V-pQ-Wot"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2b3-DC-bZc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

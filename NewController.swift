@@ -139,6 +139,12 @@ class NewController: UIViewController {
         POIName.font = UIFont.boldSystemFont(ofSize: 17.0)
         POIAddress.text = place.formattedAddress
         
+        let thickness: CGFloat = 0.5
+        let bottomBorder = CALayer()
+        bottomBorder.frame = CGRect(x:0, y: self.POIAddress.frame.size.height - thickness, width: self.POIAddress.frame.size.width, height:thickness)
+        bottomBorder.backgroundColor = UIColor.systemGray.cgColor
+        POIAddress.layer.addSublayer(bottomBorder)
+        
         // business status
         switch place.businessStatus.rawValue {
         case 1:

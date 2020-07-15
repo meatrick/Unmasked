@@ -32,6 +32,7 @@ class NewController: UIViewController {
     @IBOutlet weak var starsCat3: StarRatingView!
     @IBOutlet weak var starsCat4: StarRatingView!
     @IBOutlet weak var btnWriteReview: UIButton!
+    @IBOutlet weak var btnSeeReviews: UIButton!
     
     
     var placeID: String?
@@ -132,6 +133,10 @@ class NewController: UIViewController {
         btnWriteReview.backgroundColor = .systemBlue
         btnWriteReview.layer.cornerRadius = 5
         
+        // button background color
+        btnSeeReviews.backgroundColor = .systemBlue
+        btnSeeReviews.layer.cornerRadius = 5
+        
         
         
         // Update UI with POI info
@@ -140,10 +145,15 @@ class NewController: UIViewController {
         POIAddress.text = place.formattedAddress
         
         let thickness: CGFloat = 0.5
+        
         let bottomBorder = CALayer()
         bottomBorder.frame = CGRect(x:0, y: self.POIAddress.frame.size.height - thickness, width: self.POIAddress.frame.size.width, height:thickness)
         bottomBorder.backgroundColor = UIColor.systemGray.cgColor
         POIAddress.layer.addSublayer(bottomBorder)
+        
+        let bottomBusiness = CALayer()
+        bottomBusiness.frame = CGRect(x:0, y: self.BusinessStatus.frame.size.height - thickness, width: self.BusinessStatus.frame.size.width, height:thickness)
+        BusinessStatus.layer.addSublayer(bottomBusiness)
         
         // business status
         switch place.businessStatus.rawValue {

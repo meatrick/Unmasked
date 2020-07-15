@@ -87,8 +87,8 @@
 		AFA0F77724A80183002C94B1 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		AFA0F77F24ABDBE2002C94B1 /* NewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewController.swift; sourceTree = "<group>"; };
 		AFE9913D24BE732A002312FF /* SeeReviewsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeReviewsController.swift; sourceTree = "<group>"; };
-		AFE9914424BE81B7002312FF /* Login.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Login.xib; path = /Users/jennasmith/Projects/StoryBoard1/StoryBoard1/Views/Login.xib; sourceTree = "<absolute>"; };
 		AFE9914524BE820F002312FF /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		AFE9914724BE87BA002312FF /* Login.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Login.xib; path = ../Login.xib; sourceTree = "<group>"; };
 		B8F364FA363D09D3B3AD94CF /* Pods-StoryBoard1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StoryBoard1.debug.xcconfig"; path = "Target Support Files/Pods-StoryBoard1/Pods-StoryBoard1.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -160,7 +160,7 @@
 		AF979CE924BCFC99001D62F3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				AFE9914424BE81B7002312FF /* Login.xib */,
+				AFE9914724BE87BA002312FF /* Login.xib */,
 				AFE9914524BE820F002312FF /* Login.swift */,
 				AF63DA7B24B7FBE400CF2F2A /* Review.xib */,
 				AF63DA7D24B7FBF100CF2F2A /* Review.swift */,

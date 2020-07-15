@@ -31,6 +31,7 @@ class NewController: UIViewController {
     @IBOutlet weak var starsCat2: StarRatingView!
     @IBOutlet weak var starsCat3: StarRatingView!
     @IBOutlet weak var starsCat4: StarRatingView!
+    @IBOutlet weak var btnWriteReview: UIButton!
     
     
     var placeID: String?
@@ -125,6 +126,12 @@ class NewController: UIViewController {
         db = Firestore.firestore()
         
         // MARK: display text
+        
+        
+        // button background color
+        btnWriteReview.backgroundColor = .systemBlue
+        btnWriteReview.layer.cornerRadius = 5
+//        btnWriteReview.contentEdgeInsets = UIEdgeInsets(top: -10,left: -10,bottom: -10,right: -10)
         
         // Update UI with POI info
         POIName.text = place.name

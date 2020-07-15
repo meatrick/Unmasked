@@ -118,7 +118,7 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <view userInteractionEnabled="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TMx-Xy-Qfh" customClass="StarRatingView" customModule="StoryBoard1" customModuleProvider="target">
+                                                    <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TMx-Xy-Qfh" customClass="StarRatingView" customModule="StoryBoard1" customModuleProvider="target">
                                                         <rect key="frame" x="249" y="0.0" width="110" height="20.333333333333332"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                         <userDefinedRuntimeAttributes>
@@ -201,8 +201,8 @@
                                                     <constraint firstItem="JD6-cB-c13" firstAttribute="top" secondItem="sn3-bc-eI1" secondAttribute="top" id="sQT-85-Od0"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fa5-y0-XUz" userLabel="Cat 3">
-                                                <rect key="frame" x="8" y="477.66666666666674" width="359" height="20.333333333333314"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fa5-y0-XUz" userLabel="Cat 3">
+                                                <rect key="frame" x="8" y="477.66666666666669" width="359" height="20.333333333333314"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[Category 3]" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aa8-9c-QLe">
                                                         <rect key="frame" x="0.0" y="0.0" width="97.333333333333329" height="20.333333333333332"/>
@@ -210,7 +210,7 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <view userInteractionEnabled="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gzc-s5-XwA" customClass="StarRatingView" customModule="StoryBoard1" customModuleProvider="target">
+                                                    <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gzc-s5-XwA" customClass="StarRatingView" customModule="StoryBoard1" customModuleProvider="target">
                                                         <rect key="frame" x="249" y="0.0" width="110" height="20.333333333333332"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                         <userDefinedRuntimeAttributes>
@@ -231,8 +231,8 @@
                                                     <constraint firstItem="Aa8-9c-QLe" firstAttribute="leading" secondItem="Fa5-y0-XUz" secondAttribute="leading" id="b6J-kC-IXz"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JoA-A1-7Jt" userLabel="Cat 4">
-                                                <rect key="frame" x="8" y="506" width="359" height="18.333333333333258"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JoA-A1-7Jt" userLabel="Cat 4">
+                                                <rect key="frame" x="8" y="505.99999999999994" width="359" height="18.333333333333314"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[Category 4]" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JRt-CE-z60">
                                                         <rect key="frame" x="0.0" y="0.0" width="97.666666666666671" height="20.333333333333332"/>
@@ -240,7 +240,7 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <view userInteractionEnabled="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nMs-jw-XFT" customClass="StarRatingView" customModule="StoryBoard1" customModuleProvider="target">
+                                                    <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nMs-jw-XFT" customClass="StarRatingView" customModule="StoryBoard1" customModuleProvider="target">
                                                         <rect key="frame" x="249" y="-1" width="110" height="20.333333333333332"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                         <userDefinedRuntimeAttributes>
@@ -261,26 +261,30 @@
                                                     <constraint firstItem="nMs-jw-XFT" firstAttribute="leading" secondItem="JoA-A1-7Jt" secondAttribute="leading" constant="249" id="wit-8Y-wYM"/>
                                                 </constraints>
                                             </view>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pNg-Td-SE6">
-                                                <rect key="frame" x="134" y="540.33333333333337" width="107" height="32"/>
-                                                <state key="normal" title="Leave A Review"/>
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pNg-Td-SE6">
+                                                <rect key="frame" x="38" y="540" width="300" height="32"/>
+                                                <inset key="contentEdgeInsets" minX="125" minY="10" maxX="125" maxY="10"/>
+                                                <inset key="titleEdgeInsets" minX="-50" minY="0.0" maxX="-50" maxY="0.0"/>
+                                                <state key="normal" title="Leave A Review">
+                                                    <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="btnWriteReview:" destination="8tB-hT-vYa" eventType="touchUpInside" id="zg4-T0-q6B"/>
-                                                    <segue destination="dQm-4n-mL8" kind="show" identifier="loginFromInfo" id="rnm-QQ-9JH"/>
+                                                    <segue destination="A8l-Tf-qPt" kind="show" identifier="showReviewController" id="SYW-tH-JS0"/>
                                                 </connections>
                                             </button>
-                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="yu7-MR-xYg">
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="yu7-MR-xYg">
                                                 <rect key="frame" x="8" y="593" width="359" height="384"/>
                                                 <subviews>
-                                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nqf-zQ-SZY" customClass="Review" customModule="StoryBoard1" customModuleProvider="target">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nqf-zQ-SZY" customClass="Review" customModule="StoryBoard1" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="359" height="128"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                     </view>
-                                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LJ2-ba-TFd" customClass="Review" customModule="StoryBoard1" customModuleProvider="target">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LJ2-ba-TFd" customClass="Review" customModule="StoryBoard1" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="128" width="359" height="128"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                     </view>
-                                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gaG-ew-Oi9" customClass="Review" customModule="StoryBoard1" customModuleProvider="target">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gaG-ew-Oi9" customClass="Review" customModule="StoryBoard1" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="256" width="359" height="128"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                     </view>
@@ -402,6 +406,7 @@
                         <outlet property="POIAddress" destination="J0N-jL-YP2" id="Jja-Py-qHM"/>
                         <outlet property="POIImage" destination="p99-YR-pwi" id="2rh-ap-TMp"/>
                         <outlet property="POIName" destination="dJR-8d-7bU" id="wUT-Us-fGF"/>
+                        <outlet property="btnWriteReview" destination="pNg-Td-SE6" id="5jJ-Hh-LsT"/>
                         <outlet property="displayedNumReviews" destination="Jla-0K-nGw" id="fHC-Jh-kjh"/>
                         <outlet property="displayedRatingNum" destination="16H-Uk-6G5" id="cvD-r2-9Tr"/>
                         <outlet property="displayedStars" destination="AhL-bi-S25" id="Mkw-xe-bQA"/>
@@ -457,11 +462,11 @@
             <objects>
                 <viewController storyboardIdentifier="ReviewController" id="A8l-Tf-qPt" customClass="ReviewController" customModule="StoryBoard1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hfn-IP-TaJ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QTR-Cs-hB5">
-                                <rect key="frame" x="0.0" y="44" width="375" height="768"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jkO-Ki-2e9" userLabel="Content View">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
@@ -698,9 +703,6 @@
             <point key="canvasLocation" x="2177" y="850"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="rnm-QQ-9JH"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <image name="xmark" catalog="system" width="128" height="113"/>
     </resources>

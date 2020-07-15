@@ -82,6 +82,8 @@ class ViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDel
         // search bar button
         makeButton()
         
+        makeLoginButton()
+        
 }
 
     
@@ -325,6 +327,16 @@ extension ViewController: GMSAutocompleteViewControllerDelegate {
             self.performSegue(withIdentifier: "showInfoPage", sender: nil)
           }
         })
+    }
+    
+    // MARK: Settings button
+    func makeLoginButton() {
+        let settingsBtn = UIButton()
+        settingsBtn.addTarget(self, action: #selector(loginClicked), for: .touchUpInside)
+    }
+    
+    @objc func loginClicked(_ sender: UIButton) {
+        performSegue(withIdentifier: "showSettings", sender: nil)
     }
 }
 

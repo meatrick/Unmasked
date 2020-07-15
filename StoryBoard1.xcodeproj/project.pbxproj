@@ -33,6 +33,7 @@
 		AFA0F78024ABDBE2002C94B1 /* NewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA0F77F24ABDBE2002C94B1 /* NewController.swift */; };
 		AFE9913E24BE732A002312FF /* SeeReviewsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE9913D24BE732A002312FF /* SeeReviewsController.swift */; };
 		AFE9914624BE820F002312FF /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE9914524BE820F002312FF /* Login.swift */; };
+		AFE9914C24BE8877002312FF /* Login.xib in Resources */ = {isa = PBXBuildFile; fileRef = AFE9914B24BE8877002312FF /* Login.xib */; };
 		BD94EDAAB044AF261D60533B /* Pods_StoryBoard1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 599CD6DDA22B31ECC9F84BA5 /* Pods_StoryBoard1.framework */; };
 /* End PBXBuildFile section */
 
@@ -88,7 +89,7 @@
 		AFA0F77F24ABDBE2002C94B1 /* NewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewController.swift; sourceTree = "<group>"; };
 		AFE9913D24BE732A002312FF /* SeeReviewsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeReviewsController.swift; sourceTree = "<group>"; };
 		AFE9914524BE820F002312FF /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
-		AFE9914724BE87BA002312FF /* Login.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Login.xib; path = ../Login.xib; sourceTree = "<group>"; };
+		AFE9914B24BE8877002312FF /* Login.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Login.xib; sourceTree = "<group>"; };
 		B8F364FA363D09D3B3AD94CF /* Pods-StoryBoard1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StoryBoard1.debug.xcconfig"; path = "Target Support Files/Pods-StoryBoard1/Pods-StoryBoard1.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -160,8 +161,8 @@
 		AF979CE924BCFC99001D62F3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				AFE9914724BE87BA002312FF /* Login.xib */,
 				AFE9914524BE820F002312FF /* Login.swift */,
+				AFE9914B24BE8877002312FF /* Login.xib */,
 				AF63DA7B24B7FBE400CF2F2A /* Review.xib */,
 				AF63DA7D24B7FBF100CF2F2A /* Review.swift */,
 				AF63DA7F24BA59F500CF2F2A /* StarRatingStackView.swift */,
@@ -352,6 +353,7 @@
 				AF63DA8324BA59F600CF2F2A /* StarRatingStackView.xib in Resources */,
 				AFA0F70E24A6D5D1002C94B1 /* LaunchScreen.storyboard in Resources */,
 				AFA0F70B24A6D5D1002C94B1 /* Assets.xcassets in Resources */,
+				AFE9914C24BE8877002312FF /* Login.xib in Resources */,
 				AF63DA7C24B7FBE400CF2F2A /* Review.xib in Resources */,
 				AFA0F77824A80183002C94B1 /* Podfile in Resources */,
 				AFA0F70924A6D5CF002C94B1 /* Main.storyboard in Resources */,

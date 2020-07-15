@@ -342,20 +342,21 @@ extension ViewController: GMSAutocompleteViewControllerDelegate {
         
         let margins = view.layoutMarginsGuide
         
-        let trailingButtonConstraint = loginBtn.trailingAnchor.constraint(equalTo: margins.trailingAnchor)
+//        let trailingButtonConstraint = loginBtn.trailingAnchor.constraint(equalTo: margins.trailingAnchor)
         
-        trailingButtonConstraint.isActive = true
+//        trailingButtonConstraint.isActive = true
         
         
         self.view.addSubview(loginBtn)
     }
     
     @objc func loginClicked(_ sender: UIButton) {
-//        performSegue(withIdentifier: "showLogin", sender: nil)
         
-        let authController = AuthViewController()
+        performSegue(withIdentifier: "showLogin", sender: nil)
         
-        present(authController, animated: true)
+//        let authController = AuthViewController()
+//
+//        present(authController, animated: true)
     }
 }
 

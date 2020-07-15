@@ -9,10 +9,10 @@
 import UIKit
 
 class Login: UIView {
-    @IBOutlet var contentView: UIView!
     
-    @IBOutlet var loginBtn: UIButton!
-    // MARK: Initialization
+    @IBOutlet var contentView: UIView!
+    @IBOutlet weak var loginBtn: UIButton!
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()

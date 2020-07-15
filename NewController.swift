@@ -131,10 +131,12 @@ class NewController: UIViewController {
         // button background color
         btnWriteReview.backgroundColor = .systemBlue
         btnWriteReview.layer.cornerRadius = 5
-//        btnWriteReview.contentEdgeInsets = UIEdgeInsets(top: -10,left: -10,bottom: -10,right: -10)
+        
+        
         
         // Update UI with POI info
         POIName.text = place.name
+        POIName.font = UIFont.boldSystemFont(ofSize: 17.0)
         POIAddress.text = place.formattedAddress
         
         // business status

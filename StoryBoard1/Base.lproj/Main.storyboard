@@ -266,7 +266,7 @@
                                                 <state key="normal" title="Leave A Review"/>
                                                 <connections>
                                                     <action selector="btnWriteReview:" destination="8tB-hT-vYa" eventType="touchUpInside" id="zg4-T0-q6B"/>
-                                                    <segue destination="A8l-Tf-qPt" kind="show" identifier="showReviewController" id="VZv-f9-IR5"/>
+                                                    <segue destination="dQm-4n-mL8" kind="show" identifier="loginFromInfo" id="rnm-QQ-9JH"/>
                                                 </connections>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="yu7-MR-xYg">
@@ -442,14 +442,6 @@
                                     <segue destination="BYZ-38-t0r" kind="show" identifier="showMapView" id="zJa-9E-0JF"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="esL-GJ-GMp">
-                                <rect key="frame" x="306" y="44" width="60" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Sign Out"/>
-                                <connections>
-                                    <action selector="signOut:" destination="dQm-4n-mL8" eventType="touchUpInside" id="bes-DI-sye"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="EYE-BG-RQN"/>
@@ -465,11 +457,11 @@
             <objects>
                 <viewController storyboardIdentifier="ReviewController" id="A8l-Tf-qPt" customClass="ReviewController" customModule="StoryBoard1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hfn-IP-TaJ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QTR-Cs-hB5">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="768"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jkO-Ki-2e9" userLabel="Content View">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
@@ -706,6 +698,9 @@
             <point key="canvasLocation" x="2177" y="850"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="rnm-QQ-9JH"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="xmark" catalog="system" width="128" height="113"/>
     </resources>

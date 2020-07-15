@@ -92,19 +92,26 @@ class NewController: UIViewController {
         else if let vc = segue.destination as? SeeReviewsController {
             vc.reviews = self.textReviews
         }
+        else if let vc = segue.destination as? AuthViewController {
+            vc.segueToLeaveReview = true
+        }
     }
     
     
     // MARK: Alert
     func alertNotSignedIn() {
         let defaultAction = UIAlertAction(title:
-            "Ok", style: .default) { (action) in
+            "Dismiss", style: .default) { (action) in
+        }
+        let signInAction = UIAlertAction(title: "Sign In", style: .default) { (action) in
+            self.performSegue(withIdentifier: "loginFromInfo", sender: nil)
         }
         
         let alert = UIAlertController(title: "Not Signed In",
               message: "You must be signed in to leave a review",
               preferredStyle: .alert)
         alert.addAction(defaultAction)
+        alert.addAction(signInAction)
         
         
         self.present(alert, animated: true) {
@@ -181,6 +188,8 @@ class NewController: UIViewController {
 //
         // update ratings info
         displayRatings()
+        
+        // MARK: add borders
         
     }
     

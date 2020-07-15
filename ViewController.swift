@@ -248,6 +248,12 @@ class ViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDel
         leadingButtonConstraint.isActive = true
 //        trailingButtonConstraint.isActive = true
         
+        // shadows
+        btnLaunchAc.layer.shadowColor = UIColor.black.cgColor
+        btnLaunchAc.layer.shadowOpacity = 1
+        btnLaunchAc.layer.shadowOffset = .zero
+        btnLaunchAc.layer.shadowRadius = 100
+        
     }
     
     
@@ -367,6 +373,7 @@ extension ViewController: GMSAutocompleteViewControllerDelegate {
 //        btnLaunchAc.frame = CGRect(x: 0,y: 0,width: 200,height: 200)
         loginBtn.layer.cornerRadius = 25
         loginBtn.clipsToBounds = true
+        
         
         self.view.addSubview(loginBtn)
         

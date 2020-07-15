@@ -121,12 +121,11 @@ class NewController: UIViewController {
         }
     }
     
+    // MARK: ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
     
         db = Firestore.firestore()
-        
-        // MARK: display text
         
         
         // button background color

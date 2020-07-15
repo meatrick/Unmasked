@@ -19,6 +19,7 @@ class ReviewController: UIViewController, UITextViewDelegate {
     @IBOutlet weak var starsCat2: RatingControl!
     @IBOutlet weak var starsCat3: RatingControl!
     @IBOutlet weak var starsCat4: RatingControl!
+    @IBOutlet weak var btnSubmitReview: UIButton!
     
     var placeID: String?
     var placeName: String?
@@ -120,6 +121,10 @@ class ReviewController: UIViewController, UITextViewDelegate {
     // MARK: viewLoading
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // button pretty
+        btnSubmitReview.backgroundColor = .systemBlue
+        btnSubmitReview.layer.cornerRadius = 5
         
         textReview.layer.borderWidth = 2
         textReview.layer.borderColor = UIColor.systemGray.cgColor

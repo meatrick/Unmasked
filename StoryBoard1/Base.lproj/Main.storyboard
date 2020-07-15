@@ -54,7 +54,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c90-rN-G1H">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c90-rN-G1H">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CPz-2s-npS" userLabel="Content View">
@@ -477,7 +477,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QTR-Cs-hB5">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QTR-Cs-hB5">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jkO-Ki-2e9" userLabel="Content View">
@@ -504,7 +504,11 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="34" id="THa-Nm-5I1"/>
                                                 </constraints>
-                                                <state key="normal" title="Submit Review"/>
+                                                <inset key="contentEdgeInsets" minX="150" minY="10" maxX="150" maxY="10"/>
+                                                <inset key="titleEdgeInsets" minX="-50" minY="0.0" maxX="-50" maxY="0.0"/>
+                                                <state key="normal" title="Submit Review">
+                                                    <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="submitReview:" destination="A8l-Tf-qPt" eventType="touchUpInside" id="TdN-VG-uiR"/>
                                                 </connections>
@@ -686,6 +690,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="YJQ-Ad-g1a"/>
                     <connections>
+                        <outlet property="btnSubmitReview" destination="H9M-U8-FCe" id="cq6-Rt-MJt"/>
                         <outlet property="starsCat1" destination="EAe-ze-Ef7" id="Urg-15-ntp"/>
                         <outlet property="starsCat2" destination="z0d-Ld-be0" id="Cqj-ZE-S3R"/>
                         <outlet property="starsCat3" destination="lB9-94-cs7" id="nMm-jS-Zal"/>

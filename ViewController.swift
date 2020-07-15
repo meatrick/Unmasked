@@ -31,6 +31,9 @@ class ViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDel
     var location: CLLocationCoordinate2D?
     var placeToOpen: GMSPlace?
     
+    var handle: AuthStateDidChangeListenerHandle?
+    var user: User?
+
 
     
     
@@ -44,6 +47,8 @@ class ViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDel
             vc.location = location
             vc.place = placeToOpen
             vc.placesClient = placesClient
+        } else if let vc = segue.destination as? AuthViewController {
+            vc.attemptAutoSignIn = false
         }
     }
     
@@ -86,6 +91,17 @@ class ViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDel
         
 }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        handle = Auth.auth().addStateDidChangeListener { (auth, user) in
+            self.user = user
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        Auth.auth().removeStateDidChangeListener(handle!)
+    }
     
     override func loadView() {
       let camera = GMSCameraPosition.camera(withLatitude: 47.603, longitude:-122.331, zoom:14)
@@ -329,7 +345,7 @@ extension ViewController: GMSAutocompleteViewControllerDelegate {
         })
     }
     
-    // MARK: Settings button
+    // MARK: Login button
     func makeLoginButton() {
         let loginView = Login()
         let loginBtn = loginView.loginBtn!
@@ -351,12 +367,41 @@ extension ViewController: GMSAutocompleteViewControllerDelegate {
     }
     
     @objc func loginClicked(_ sender: UIButton) {
-        
-        performSegue(withIdentifier: "showLogin", sender: nil)
+        if user == nil {
+            performSegue(withIdentifier: "showLogin", sender: nil)
+        } else {
+            alertLogin()
+        }
         
 //        let authController = AuthViewController()
 //
 //        present(authController, animated: true)
+    }
+    
+    // MARK: Alerts
+    func alertLogin() {
+        let defaultAction = UIAlertAction(title:
+            "Stay Logged In", style: .default) { (action) in
+        }
+        
+        let signOutAction = UIAlertAction(title: "Logout", style: .default) { (action) in
+                do {
+                    try Auth.auth().signOut()
+                } catch let signOutError as NSError {
+                    print ("Error signing out: %@", signOutError)
+                }
+        }
+        
+        let alert = UIAlertController(title: "Already Logged In",
+              message: "You're already logged in",
+              preferredStyle: .alert)
+        alert.addAction(defaultAction)
+        alert.addAction(signOutAction)
+        
+        
+        self.present(alert, animated: true) {
+            // The alert was presented
+        }
     }
 }
 

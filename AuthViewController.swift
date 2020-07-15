@@ -18,6 +18,8 @@ import FirebaseStorage
 class AuthViewController: UIViewController {
     var handle: AuthStateDidChangeListenerHandle?
     
+    var attemptAutoSignIn: Bool = true
+    
     @IBAction func signOut(_ sender: Any) {
         do {
             try Auth.auth().signOut()
@@ -33,7 +35,10 @@ class AuthViewController: UIViewController {
         GIDSignIn.sharedInstance()?.presentingViewController = self
 //        GIDSignIn.sharedInstance().signIn()
         // Automatically sign in the user.
-        GIDSignIn.sharedInstance()?.restorePreviousSignIn()
+        
+        if attemptAutoSignIn {
+            GIDSignIn.sharedInstance()?.restorePreviousSignIn()
+        }
         
         
     }

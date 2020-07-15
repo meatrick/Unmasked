@@ -77,7 +77,7 @@ class NewController: UIViewController {
             self.user = user
         }
     }
-    // TODO: add viewWillDisappear func
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(true)
         Auth.auth().removeStateDidChangeListener(handle!)

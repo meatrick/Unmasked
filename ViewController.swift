@@ -208,15 +208,17 @@ class ViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDel
     func makeButton() {
         let btnLaunchAc = UIButton()
         
-        btnLaunchAc.backgroundColor = .systemGray
+        btnLaunchAc.backgroundColor = .white
 //        btnLaunchAc.setTitle("Search...", for: .normal)
         btnLaunchAc.addTarget(self, action: #selector(autocompleteClicked), for: .touchUpInside)
         
 //        Add padding around text
 //        btnLaunchAc.titleEdgeInsets = UIEdgeInsets(top: -10,left: -10,bottom: -10,right: -10)
-//        btnLaunchAc.contentEdgeInsets = UIEdgeInsets(top: 5,left: 5,bottom: 5,right: 5)
+        btnLaunchAc.layer.masksToBounds = true
+        btnLaunchAc.layer.cornerRadius = btnLaunchAc.bounds.width / 2
+        btnLaunchAc.contentEdgeInsets = UIEdgeInsets(top: 5,left: 5,bottom: 5,right: 5)
         
-        btnLaunchAc.frame = CGRect(x: 0,y: 0,width: 50,height: 50)
+//        btnLaunchAc.frame = CGRect(x: 0,y: 0,width: 50,height: 50)
         
         
         // set image
@@ -237,11 +239,11 @@ class ViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDel
         let margins = view.layoutMarginsGuide
         let leadingButtonConstraint = btnLaunchAc.leadingAnchor.constraint(equalTo: margins.leadingAnchor)
         
-        let trailingButtonConstraint = btnLaunchAc.trailingAnchor.constraint(equalTo: margins.trailingAnchor)
+//        let trailingButtonConstraint = btnLaunchAc.trailingAnchor.constraint(equalTo: margins.trailingAnchor)
 
         bottomButtonConstraint.isActive = true
         leadingButtonConstraint.isActive = true
-        trailingButtonConstraint.isActive = true
+//        trailingButtonConstraint.isActive = true
         
     }
     
@@ -356,14 +358,19 @@ extension ViewController: GMSAutocompleteViewControllerDelegate {
         //Button Constraints:
         loginBtn.translatesAutoresizingMaskIntoConstraints = false
         
-        let margins = view.layoutMarginsGuide
-        
-//        let trailingButtonConstraint = loginBtn.trailingAnchor.constraint(equalTo: margins.trailingAnchor)
-        
-//        trailingButtonConstraint.isActive = true
-        
-        
         self.view.addSubview(loginBtn)
+        
+        let margins = self.view.layoutMarginsGuide
+        
+        let trailingButtonConstraint = loginBtn.trailingAnchor.constraint(equalTo: margins.trailingAnchor)
+        
+        trailingButtonConstraint.isActive = true
+        
+        
+        // circle
+        let circle = Circle()
+        
+        
     }
     
     @objc func loginClicked(_ sender: UIButton) {

@@ -236,7 +236,7 @@ class ViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDel
         btnLaunchAc.translatesAutoresizingMaskIntoConstraints = false
 
         //To anchor above the tab bar on the bottom of the screen:
-        let bottomButtonConstraint = btnLaunchAc.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor , constant: 5)
+        let topButtonConstraint = btnLaunchAc.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor , constant: 15)
 
         //edge of the screen in InterfaceBuilder:
         let margins = view.layoutMarginsGuide
@@ -244,7 +244,7 @@ class ViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDel
         
 //        let trailingButtonConstraint = btnLaunchAc.trailingAnchor.constraint(equalTo: margins.trailingAnchor)
 
-        bottomButtonConstraint.isActive = true
+        topButtonConstraint.isActive = true
         leadingButtonConstraint.isActive = true
 //        trailingButtonConstraint.isActive = true
         
@@ -360,14 +360,24 @@ extension ViewController: GMSAutocompleteViewControllerDelegate {
         
         //Button Constraints:
         loginBtn.translatesAutoresizingMaskIntoConstraints = false
+
+        loginBtn.backgroundColor = .white
+        loginBtn.contentEdgeInsets = UIEdgeInsets(top: 15,left: 15,bottom: 15,right: 15)
+    
+//        btnLaunchAc.frame = CGRect(x: 0,y: 0,width: 200,height: 200)
+        loginBtn.layer.cornerRadius = 25
+        loginBtn.clipsToBounds = true
         
         self.view.addSubview(loginBtn)
         
         let margins = self.view.layoutMarginsGuide
         
+        let topButtonConstraint = loginBtn.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor , constant: 15)
+        
         let trailingButtonConstraint = loginBtn.trailingAnchor.constraint(equalTo: margins.trailingAnchor)
         
         trailingButtonConstraint.isActive = true
+        topButtonConstraint.isActive = true
         
         
     }

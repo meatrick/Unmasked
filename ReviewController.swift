@@ -15,14 +15,13 @@ class ReviewController: UIViewController, UITextViewDelegate {
     // MARK: Properties
 
     @IBOutlet weak var textReview: UITextView!
+    @IBOutlet weak var btnSubmitReview: UIButton!
     @IBOutlet weak var starsOverall: RatingControl!
     @IBOutlet weak var starsEmployeePPW: RatingControl!
     @IBOutlet weak var starsPatronPPW: RatingControl!
     @IBOutlet weak var starsDistancing: RatingControl!
     @IBOutlet weak var starsSanitization: RatingControl!
     @IBOutlet weak var starsConvenience: RatingControl!
-    @IBOutlet weak var btnSubmitReview: UIButton!
-    
     var placeID: String?
     var placeName: String?
     var user: User?

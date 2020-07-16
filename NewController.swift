@@ -19,10 +19,6 @@ class NewController: UIViewController {
     @IBOutlet weak var POIImage: UIImageView!
     @IBOutlet weak var POIAddress: UILabel!
     @IBOutlet weak var BusinessStatus: UILabel!
-    @IBOutlet weak var reviewStack: UIStackView!
-    @IBOutlet weak var review0: Review!
-    @IBOutlet weak var review1: Review!
-    @IBOutlet weak var review2: Review!
     @IBOutlet weak var displayedRatingNum: UILabel!
     @IBOutlet weak var displayedStars: StarRatingView!
     @IBOutlet weak var displayedNumReviews: UILabel!
@@ -33,6 +29,7 @@ class NewController: UIViewController {
     @IBOutlet weak var starsCat4: StarRatingView!
     @IBOutlet weak var btnWriteReview: UIButton!
     @IBOutlet weak var btnSeeReviews: UIButton!
+    @IBOutlet weak var reviewStack: UIStackView!
     
     
     var placeID: String?
@@ -199,9 +196,9 @@ class NewController: UIViewController {
 //        let review0 = Review()
 //        let review1 = Review()
 //        let review2 = Review()
-        review0.reviewText.text = "good"
-        review1.reviewText.text = "bad"
-        review2.reviewText.text = "okay"
+//        review0.reviewText.text = "good"
+//        review1.reviewText.text = "bad"
+//        review2.reviewText.text = "okay"
         
         // constraints
 
@@ -260,13 +257,9 @@ class NewController: UIViewController {
                 // MARK: display 3 reviews
                 var counter = 0
                 while counter < 3 && counter < self.textReviews.count {
-                    if counter == 0 {
-                        self.review0.reviewText.text = self.textReviews[0]
-                    } else if counter == 1 {
-                        self.review1.reviewText.text = self.textReviews[1]
-                    } else if counter == 2 {
-                        self.review2.reviewText.text = self.textReviews[2]
-                    }
+                    let r = Review()
+                    r.reviewText.text = self.textReviews[counter]
+                    self.reviewStack.addArrangedSubview(r)
                     counter += 1
                 }
 

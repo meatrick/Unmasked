@@ -271,28 +271,7 @@
                                                     <segue destination="A8l-Tf-qPt" kind="show" identifier="showReviewController" id="SYW-tH-JS0"/>
                                                 </connections>
                                             </button>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="yu7-MR-xYg">
-                                                <rect key="frame" x="8" y="593" width="359" height="384"/>
-                                                <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nqf-zQ-SZY" customClass="Review" customModule="StoryBoard1" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="359" height="128"/>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LJ2-ba-TFd" customClass="Review" customModule="StoryBoard1" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="128" width="359" height="128"/>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gaG-ew-Oi9" customClass="Review" customModule="StoryBoard1" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="256" width="359" height="128"/>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                                    </view>
-                                                </subviews>
-                                                <constraints>
-                                                    <constraint firstItem="LJ2-ba-TFd" firstAttribute="centerY" secondItem="yu7-MR-xYg" secondAttribute="centerY" id="31R-3x-439"/>
-                                                    <constraint firstAttribute="bottom" secondItem="Nqf-zQ-SZY" secondAttribute="bottom" constant="256" id="mwy-vl-6Tz"/>
-                                                </constraints>
-                                            </stackView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5bk-UI-9Qo">
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5bk-UI-9Qo">
                                                 <rect key="frame" x="8" y="985" width="359" height="38"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="cwh-Bo-3Ac"/>
@@ -329,6 +308,10 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="se7-HP-QNf">
+                                                <rect key="frame" x="9" y="580" width="357" height="194"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </stackView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
@@ -350,9 +333,7 @@
                                             <constraint firstItem="J0N-jL-YP2" firstAttribute="top" secondItem="Jla-0K-nGw" secondAttribute="bottom" constant="-2" id="BJG-yM-OEs"/>
                                             <constraint firstAttribute="trailing" secondItem="5HR-9P-sWp" secondAttribute="trailing" constant="8" id="BOu-0b-Vvj"/>
                                             <constraint firstItem="Jla-0K-nGw" firstAttribute="leading" secondItem="AhL-bi-S25" secondAttribute="trailing" constant="3" id="BaX-7V-cbW"/>
-                                            <constraint firstAttribute="bottom" secondItem="yu7-MR-xYg" secondAttribute="bottom" constant="223" id="EH2-rj-gtz"/>
                                             <constraint firstItem="p99-YR-pwi" firstAttribute="centerX" secondItem="CPz-2s-npS" secondAttribute="centerX" id="GH8-gf-FdY"/>
-                                            <constraint firstItem="yu7-MR-xYg" firstAttribute="leading" secondItem="JoA-A1-7Jt" secondAttribute="leading" id="Gqt-id-Bf3"/>
                                             <constraint firstItem="pNg-Td-SE6" firstAttribute="centerX" secondItem="CPz-2s-npS" secondAttribute="centerX" id="IAW-XT-3gn"/>
                                             <constraint firstItem="Ahz-X2-e29" firstAttribute="leading" secondItem="CPz-2s-npS" secondAttribute="leading" constant="8" id="IKt-ur-L3a"/>
                                             <constraint firstItem="AhL-bi-S25" firstAttribute="centerY" secondItem="16H-Uk-6G5" secondAttribute="centerY" id="Kov-mR-RZP"/>
@@ -369,15 +350,12 @@
                                             <constraint firstAttribute="trailing" secondItem="sn3-bc-eI1" secondAttribute="trailing" constant="8" id="VEE-ER-CWh"/>
                                             <constraint firstItem="p99-YR-pwi" firstAttribute="top" secondItem="CPz-2s-npS" secondAttribute="top" id="Z5l-Ea-c7E"/>
                                             <constraint firstItem="16H-Uk-6G5" firstAttribute="top" secondItem="dJR-8d-7bU" secondAttribute="bottom" constant="-2.3333333333333144" id="bb4-wT-qS7"/>
-                                            <constraint firstItem="5bk-UI-9Qo" firstAttribute="top" secondItem="yu7-MR-xYg" secondAttribute="bottom" constant="8" symbolic="YES" id="brO-eX-V8R"/>
                                             <constraint firstItem="dJR-8d-7bU" firstAttribute="top" secondItem="p99-YR-pwi" secondAttribute="bottom" constant="8" id="btx-jR-Ofd"/>
                                             <constraint firstItem="J0N-jL-YP2" firstAttribute="leading" secondItem="16H-Uk-6G5" secondAttribute="leading" id="ccK-Ka-SLh"/>
                                             <constraint firstItem="Jla-0K-nGw" firstAttribute="centerY" secondItem="16H-Uk-6G5" secondAttribute="centerY" id="ddk-Fh-m8r"/>
                                             <constraint firstItem="AhL-bi-S25" firstAttribute="top" secondItem="dJR-8d-7bU" secondAttribute="bottom" constant="2.6666666666666856" id="exf-DI-CkG"/>
-                                            <constraint firstItem="yu7-MR-xYg" firstAttribute="top" secondItem="pNg-Td-SE6" secondAttribute="bottom" constant="20.666666666666629" id="f1M-ri-Dt3"/>
                                             <constraint firstAttribute="trailing" secondItem="JoA-A1-7Jt" secondAttribute="trailing" constant="8" id="g8j-ae-Ir9"/>
                                             <constraint firstItem="6eF-ts-IuF" firstAttribute="top" secondItem="CPz-2s-npS" secondAttribute="topMargin" id="gLr-Sa-2En"/>
-                                            <constraint firstItem="yu7-MR-xYg" firstAttribute="trailing" secondItem="JoA-A1-7Jt" secondAttribute="trailing" id="h0v-IV-IeD"/>
                                             <constraint firstItem="0e9-t8-gU7" firstAttribute="top" secondItem="Ahz-X2-e29" secondAttribute="bottom" constant="8" id="hIm-6a-Xf6"/>
                                             <constraint firstItem="pNg-Td-SE6" firstAttribute="top" secondItem="JoA-A1-7Jt" secondAttribute="bottom" constant="16" id="iJ7-s7-C5A"/>
                                             <constraint firstItem="JoA-A1-7Jt" firstAttribute="top" secondItem="Fa5-y0-XUz" secondAttribute="bottom" constant="8" id="kYv-gt-4YE"/>
@@ -422,10 +400,7 @@
                         <outlet property="displayedNumReviews" destination="Jla-0K-nGw" id="fHC-Jh-kjh"/>
                         <outlet property="displayedRatingNum" destination="16H-Uk-6G5" id="cvD-r2-9Tr"/>
                         <outlet property="displayedStars" destination="AhL-bi-S25" id="Mkw-xe-bQA"/>
-                        <outlet property="review0" destination="Nqf-zQ-SZY" id="Ivl-j9-5cf"/>
-                        <outlet property="review1" destination="LJ2-ba-TFd" id="woc-n0-Ryp"/>
-                        <outlet property="review2" destination="gaG-ew-Oi9" id="EKr-Am-M6J"/>
-                        <outlet property="reviewStack" destination="yu7-MR-xYg" id="wkZ-Ck-cSc"/>
+                        <outlet property="reviewStack" destination="se7-HP-QNf" id="rf9-zQ-fwG"/>
                         <outlet property="starsCat1" destination="Uiw-e1-6UG" id="j7y-g8-KhL"/>
                         <outlet property="starsCat2" destination="1hw-75-p3t" id="sDc-Da-wTl"/>
                         <outlet property="starsCat3" destination="Gzc-s5-XwA" id="6Nd-Gi-HFp"/>

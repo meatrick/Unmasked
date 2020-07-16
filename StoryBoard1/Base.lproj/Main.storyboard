@@ -434,12 +434,12 @@
                         <outlet property="displayedRatingNum" destination="16H-Uk-6G5" id="cvD-r2-9Tr"/>
                         <outlet property="displayedStars" destination="AhL-bi-S25" id="Mkw-xe-bQA"/>
                         <outlet property="reviewStack" destination="se7-HP-QNf" id="rf9-zQ-fwG"/>
-                        <outlet property="starCat5" destination="P1H-Di-zev" id="Q5N-z1-wQB"/>
-                        <outlet property="starsCat1" destination="Uiw-e1-6UG" id="j7y-g8-KhL"/>
-                        <outlet property="starsCat2" destination="1hw-75-p3t" id="sDc-Da-wTl"/>
-                        <outlet property="starsCat3" destination="Gzc-s5-XwA" id="6Nd-Gi-HFp"/>
-                        <outlet property="starsCat4" destination="nMs-jw-XFT" id="oPx-QB-dsC"/>
+                        <outlet property="starsConvenience" destination="P1H-Di-zev" id="Q5N-z1-wQB"/>
+                        <outlet property="starsDistancing" destination="Gzc-s5-XwA" id="6Nd-Gi-HFp"/>
+                        <outlet property="starsEmployeePPW" destination="Uiw-e1-6UG" id="j7y-g8-KhL"/>
                         <outlet property="starsOverall" destination="TMx-Xy-Qfh" id="B4v-5t-MPv"/>
+                        <outlet property="starsPatronPPW" destination="1hw-75-p3t" id="sDc-Da-wTl"/>
+                        <outlet property="starsSanitization" destination="nMs-jw-XFT" id="oPx-QB-dsC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V7l-Cq-H5q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

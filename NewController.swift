@@ -23,11 +23,11 @@ class NewController: UIViewController {
     @IBOutlet weak var displayedStars: StarRatingView!
     @IBOutlet weak var displayedNumReviews: UILabel!
     @IBOutlet weak var starsOverall: StarRatingView!
-    @IBOutlet weak var starsCat1: StarRatingView!
-    @IBOutlet weak var starsCat2: StarRatingView!
-    @IBOutlet weak var starsCat3: StarRatingView!
-    @IBOutlet weak var starsCat4: StarRatingView!
-    @IBOutlet weak var starCat5: StarRatingView!
+    @IBOutlet weak var starsEmployeePPW: StarRatingView!
+    @IBOutlet weak var starsPatronPPW: StarRatingView!
+    @IBOutlet weak var starsDistancing: StarRatingView!
+    @IBOutlet weak var starsSanitization: StarRatingView!
+    @IBOutlet weak var starsConvenience: StarRatingView!
     @IBOutlet weak var btnWriteReview: UIButton!
     @IBOutlet weak var btnSeeReviews: UIButton!
     @IBOutlet weak var reviewStack: UIStackView!
@@ -222,35 +222,38 @@ class NewController: UIViewController {
                 print("Error getting documents: \(err)")
             } else {
                 var avgRatingOverall: Float = 0.0
-                var avgRating1: Float = 0.0
-                var avgRating2: Float = 0.0
-                var avgRating3: Float = 0.0
-                var avgRating4: Float = 0.0
+                var avgRatingEmployeePPW: Float = 0.0
+                var avgRatingPatronPPW: Float = 0.0
+                var avgRatingDistancing: Float = 0.0
+                var avgRatingSanitization: Float = 0.0
+                var avgRatingConvenience: Float = 0.0
                 var numRatings: Int = 0
                 for document in querySnapshot!.documents {
 //                  print("\(document.documentID) => \(document.data())")
                     numRatings += 1
-                    avgRating1 += document.get("rating1") as! Float
-                    avgRating2 += document.get("rating2") as! Float
-                    avgRating3 += document.get("rating3") as! Float
-                    avgRating4 += document.get("rating4") as! Float
-                    avgRatingOverall += avgRating1 + avgRating2 + avgRating3 + avgRating4
-                    avgRatingOverall /= 4
+                    avgRatingOverall += document.get("ratingOverall") as! Float
+                    avgRatingEmployeePPW += document.get("ratingEmployeePPW") as! Float
+                    avgRatingPatronPPW += document.get("ratingPatronPPW") as! Float
+                    avgRatingDistancing += document.get("ratingDistancing") as! Float
+                    avgRatingSanitization += document.get("ratingSanitization") as! Float
+                    avgRatingConvenience += document.get("ratingConvenience") as! Float
                     let textReview: String = document.get("textReview") as! String
                     self.textReviews.append(textReview)
                 }
-                avgRating1 /= Float(numRatings)
-                avgRating2 /= Float(numRatings)
-                avgRating3 /= Float(numRatings)
-                avgRating4 /= Float(numRatings)
                 avgRatingOverall /= Float(numRatings)
+                avgRatingEmployeePPW /= Float(numRatings)
+                avgRatingPatronPPW /= Float(numRatings)
+                avgRatingDistancing /= Float(numRatings)
+                avgRatingSanitization /= Float(numRatings)
+                avgRatingConvenience /= Float(numRatings)
                 
                 // set the views
                 self.starsOverall.rating = avgRatingOverall
-                self.starsCat1.rating = avgRating1
-                self.starsCat2.rating = avgRating2
-                self.starsCat3.rating = avgRating3
-                self.starsCat4.rating = avgRating4
+                self.starsEmployeePPW.rating = avgRatingEmployeePPW
+                self.starsPatronPPW.rating = avgRatingPatronPPW
+                self.starsDistancing.rating = avgRatingDistancing
+                self.starsSanitization.rating = avgRatingSanitization
+                self.starsConvenience.rating = avgRatingConvenience
                 self.displayedStars.rating = avgRatingOverall
                 self.displayedRatingNum.text = String(format: "%.1f", avgRatingOverall)
                 self.displayedNumReviews.text = "(" + String(numRatings) + ")"

@@ -39,4 +39,13 @@ class Review: UIView {
         contentView.layer.masksToBounds = true
         
     }
+    
+    override var intrinsicContentSize: CGSize {
+        return CGSize(width: 334, height: 250)
+        // if using in, say, a vertical stack view, the width is ignored
+    }
+
+    override func prepareForInterfaceBuilder() {
+         invalidateIntrinsicContentSize()
+    }
 }

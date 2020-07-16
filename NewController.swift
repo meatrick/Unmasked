@@ -57,7 +57,7 @@ class NewController: UIViewController {
     }
     
     @IBAction func btnSeeReviews(_ sender: Any) {
-        performSegue(withIdentifier: "showAllReviewsController", sender: nil)
+        // TODO:
     }
     // MARK: Sign Out
 //    @IBAction func signOut(_ sender: Any) {
@@ -257,6 +257,7 @@ class NewController: UIViewController {
                 // MARK: display 3 reviews
                 var counter = 0
                 while counter < 3 && counter < self.textReviews.count {
+                    print("counter: \(counter)")
                     let r = Review()
                     r.reviewText.text = self.textReviews[counter]
                     self.reviewStack.addArrangedSubview(r)

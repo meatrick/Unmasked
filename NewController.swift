@@ -27,6 +27,7 @@ class NewController: UIViewController {
     @IBOutlet weak var starsCat2: StarRatingView!
     @IBOutlet weak var starsCat3: StarRatingView!
     @IBOutlet weak var starsCat4: StarRatingView!
+    @IBOutlet weak var starCat5: StarRatingView!
     @IBOutlet weak var btnWriteReview: UIButton!
     @IBOutlet weak var btnSeeReviews: UIButton!
     @IBOutlet weak var reviewStack: UIStackView!

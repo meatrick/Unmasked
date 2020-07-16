@@ -15,10 +15,12 @@ class ReviewController: UIViewController, UITextViewDelegate {
     // MARK: Properties
 
     @IBOutlet weak var textReview: UITextView!
-    @IBOutlet weak var starsCat1: RatingControl!
-    @IBOutlet weak var starsCat2: RatingControl!
-    @IBOutlet weak var starsCat3: RatingControl!
-    @IBOutlet weak var starsCat4: RatingControl!
+    @IBOutlet weak var starsOverall: RatingControl!
+    @IBOutlet weak var starsEmployeePPW: RatingControl!
+    @IBOutlet weak var starsPatronPPW: RatingControl!
+    @IBOutlet weak var starsDistancing: RatingControl!
+    @IBOutlet weak var starsSanitization: RatingControl!
+    @IBOutlet weak var starsConvenience: RatingControl!
     @IBOutlet weak var btnSubmitReview: UIButton!
     
     var placeID: String?
@@ -36,22 +38,32 @@ class ReviewController: UIViewController, UITextViewDelegate {
         print(textReview.text!)
         
         // TODO: create popup
-        guard starsCat1.rating > 0 else {
+        guard starsOverall.rating > 0 else {
+            alertUnfilledForm()
+            return
+        }
+
+        guard starsEmployeePPW.rating > 0 else {
+            alertUnfilledForm()
+            return
+        }
+
+        guard starsPatronPPW.rating > 0 else {
+            alertUnfilledForm()
+            return
+        }
+
+        guard starsDistancing.rating > 0 else {
             alertUnfilledForm()
             return
         }
         
-        guard starsCat2.rating > 0 else {
+        guard starsSanitization.rating > 0 else {
             alertUnfilledForm()
             return
         }
         
-        guard starsCat3.rating > 0 else {
-            alertUnfilledForm()
-            return
-        }
-        
-        guard starsCat4.rating > 0 else {
+        guard starsConvenience.rating > 0 else {
             alertUnfilledForm()
             return
         }
@@ -68,10 +80,12 @@ class ReviewController: UIViewController, UITextViewDelegate {
         var reviewRef: DocumentReference? = nil
         reviewRef = placeRef.collection("reviews").addDocument(data: [
             "textReview": textReview.text!,
-            "rating1": starsCat1.rating,
-            "rating2": starsCat2.rating,
-            "rating3": starsCat3.rating,
-            "rating4": starsCat4.rating,
+            "ratingOverall": starsOverall.rating,
+            "ratingEmployeePPW": starsEmployeePPW.rating,
+            "ratingPatronPPW": starsPatronPPW.rating,
+            "ratingDistancing": starsDistancing.rating,
+            "ratingSanitization": starsSanitization.rating,
+            "ratingConvenience": starsConvenience.rating,
             "UserID": user!.uid,]) { err in
                 if let err = err {
                     print("Error adding document: \(err)")
@@ -89,13 +103,13 @@ class ReviewController: UIViewController, UITextViewDelegate {
     func alertUnfilledForm() {
         let defaultAction = UIAlertAction(title: "Ok", style: .default) { (action) in
         }
-        
+
         // Create and configure the alert controller.
         let alert = UIAlertController(title: "Unfilled Ratings",
               message: "Please leave a rating for all categories",
               preferredStyle: .alert)
         alert.addAction(defaultAction)
-        
+
         self.present(alert, animated: true) {
             // The alert was presented
         }

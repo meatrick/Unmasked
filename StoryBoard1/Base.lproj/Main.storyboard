@@ -309,7 +309,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="se7-HP-QNf">
-                                                <rect key="frame" x="9" y="580" width="357" height="194"/>
+                                                <rect key="frame" x="9" y="580" width="234" height="194"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </stackView>
                                         </subviews>
@@ -468,14 +468,14 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Review..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="p4z-Fa-Lgh">
-                                                <rect key="frame" x="8" y="426" width="359" height="206"/>
+                                                <rect key="frame" x="8" y="510" width="359" height="206"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H9M-U8-FCe">
-                                                <rect key="frame" x="8" y="640" width="359" height="34"/>
+                                                <rect key="frame" x="8" y="724" width="359" height="34"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="34" id="THa-Nm-5I1"/>
                                                 </constraints>
@@ -612,6 +612,35 @@
                                                     <constraint firstAttribute="height" constant="83" id="cka-eV-iAJ"/>
                                                 </constraints>
                                             </view>
+                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B0D-0Z-y9I" userLabel="Cat 5">
+                                                <rect key="frame" x="8" y="419" width="359" height="83"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="[Category 5]" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GdP-dq-GgW">
+                                                        <rect key="frame" x="0.0" y="-1" width="351" height="21"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="PKg-ai-Pvh" customClass="RatingControl" customModule="StoryBoard1" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="28" width="351" height="55"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="starCount">
+                                                                <integer key="value" value="5"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="size" keyPath="starSize">
+                                                                <size key="value" width="44" height="55"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </stackView>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="83" id="Sga-6i-euc"/>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="83" id="Uho-JY-M0G"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
@@ -619,11 +648,11 @@
                                             <constraint firstItem="H9M-U8-FCe" firstAttribute="trailing" secondItem="p4z-Fa-Lgh" secondAttribute="trailing" id="5cF-iG-1D0"/>
                                             <constraint firstAttribute="trailing" secondItem="smX-a6-55w" secondAttribute="trailing" constant="8" id="6lg-mD-A8h"/>
                                             <constraint firstItem="2fH-kt-Omq" firstAttribute="top" secondItem="jkO-Ki-2e9" secondAttribute="top" constant="8" id="8aS-qq-IQ4"/>
-                                            <constraint firstItem="p4z-Fa-Lgh" firstAttribute="top" secondItem="z0G-Gx-Q5S" secondAttribute="bottom" constant="20" id="9Sc-wH-t6H"/>
-                                            <constraint firstItem="H9M-U8-FCe" firstAttribute="top" secondItem="jkO-Ki-2e9" secondAttribute="top" constant="640" id="9fn-De-qIh"/>
+                                            <constraint firstItem="p4z-Fa-Lgh" firstAttribute="top" secondItem="z0G-Gx-Q5S" secondAttribute="bottom" constant="104" id="9Sc-wH-t6H"/>
+                                            <constraint firstItem="H9M-U8-FCe" firstAttribute="top" secondItem="jkO-Ki-2e9" secondAttribute="top" constant="724" id="9fn-De-qIh"/>
                                             <constraint firstAttribute="trailing" secondItem="p4z-Fa-Lgh" secondAttribute="trailing" constant="8" id="Bgy-bh-aWP"/>
                                             <constraint firstItem="6aJ-5b-Nma" firstAttribute="leading" secondItem="jkO-Ki-2e9" secondAttribute="leading" constant="8" id="Cfz-Qp-t4V"/>
-                                            <constraint firstAttribute="bottom" secondItem="H9M-U8-FCe" secondAttribute="bottom" constant="84" id="FJZ-Vn-brW"/>
+                                            <constraint firstAttribute="bottom" secondItem="H9M-U8-FCe" secondAttribute="bottom" id="FJZ-Vn-brW"/>
                                             <constraint firstItem="z0G-Gx-Q5S" firstAttribute="leading" secondItem="jkO-Ki-2e9" secondAttribute="leading" constant="8" id="Imp-KG-Kvp"/>
                                             <constraint firstItem="a8u-Ob-Gbi" firstAttribute="leading" secondItem="jkO-Ki-2e9" secondAttribute="leading" constant="8" id="JEz-mr-87B"/>
                                             <constraint firstItem="H9M-U8-FCe" firstAttribute="top" secondItem="p4z-Fa-Lgh" secondAttribute="bottom" constant="8" id="LzO-k3-TfE"/>

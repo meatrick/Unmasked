@@ -337,7 +337,7 @@
                                                     <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="btnSeeReviews:" destination="8tB-hT-vYa" eventType="touchUpInside" id="hOf-zf-Unx"/>
+                                                    <action selector="btnLoadMoreReviews:" destination="8tB-hT-vYa" eventType="touchUpInside" id="hah-sy-pid"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -428,7 +428,7 @@
                         <outlet property="POIAddress" destination="J0N-jL-YP2" id="Jja-Py-qHM"/>
                         <outlet property="POIImage" destination="p99-YR-pwi" id="2rh-ap-TMp"/>
                         <outlet property="POIName" destination="dJR-8d-7bU" id="wUT-Us-fGF"/>
-                        <outlet property="btnSeeReviews" destination="5bk-UI-9Qo" id="E1J-tF-fld"/>
+                        <outlet property="btnLoadMoreReviews" destination="5bk-UI-9Qo" id="QYi-ly-G3s"/>
                         <outlet property="btnWriteReview" destination="pNg-Td-SE6" id="5jJ-Hh-LsT"/>
                         <outlet property="displayedNumReviews" destination="Jla-0K-nGw" id="fHC-Jh-kjh"/>
                         <outlet property="displayedRatingNum" destination="16H-Uk-6G5" id="cvD-r2-9Tr"/>

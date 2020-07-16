@@ -13,6 +13,10 @@ import Firebase
 
 class NewController: UIViewController {
     
+    // MARK: Constants
+    let NUM_REVIEWS_TO_DISPLAY_DEFAULT = 3
+    let NUM_REVIEWS_TO_LOAD = 10
+    
     // MARK: Properties
     
     @IBOutlet weak var POIName: UILabel!
@@ -29,7 +33,7 @@ class NewController: UIViewController {
     @IBOutlet weak var starsSanitization: StarRatingView!
     @IBOutlet weak var starsConvenience: StarRatingView!
     @IBOutlet weak var btnWriteReview: UIButton!
-    @IBOutlet weak var btnSeeReviews: UIButton!
+    @IBOutlet weak var btnLoadMoreReviews: UIButton!
     @IBOutlet weak var reviewStack: UIStackView!
     
     
@@ -45,6 +49,7 @@ class NewController: UIViewController {
     var db: Firestore!
     
     var textReviews: [String?] = []
+    var numReviewsLoaded: Int = 0
     
     
     // MARK: Actions
@@ -57,10 +62,33 @@ class NewController: UIViewController {
         }
     }
     
-    @IBAction func btnSeeReviews(_ sender: Any) {
-        // TODO:
+    @IBAction func btnLoadMoreReviews(_ sender: Any) {
+        // do nothing if there are not more than 3 reviews
+        guard textReviews.count > NUM_REVIEWS_TO_DISPLAY_DEFAULT else {
+            return
+        }
+        
+        var counter = 0
+        while counter < NUM_REVIEWS_TO_LOAD && numReviewsLoaded < textReviews.count {
+            
+            // load a review
+            let r = Review()
+            r.reviewText.text = self.textReviews[self.numReviewsLoaded]
+            self.reviewStack.addArrangedSubview(r)
+            
+            // constraints
+            r.translatesAutoresizingMaskIntoConstraints = false
+            let horizontalConstraint = r.centerXAnchor.constraint(equalTo: self.view.centerXAnchor)
+            NSLayoutConstraint.activate([horizontalConstraint])
+            
+            counter += 1
+            self.numReviewsLoaded += 1
+        }
+        
     }
-    // MARK: Sign Out
+    
+    
+        // MARK: Sign Out
 //    @IBAction func signOut(_ sender: Any) {
 //        do {
 //            try Auth.auth().signOut()
@@ -88,9 +116,6 @@ class NewController: UIViewController {
         if let vc = segue.destination as? ReviewController {
             vc.placeID = placeID
             vc.placeName = name
-        }
-        else if let vc = segue.destination as? SeeReviewsController {
-            vc.reviews = self.textReviews
         }
         else if let vc = segue.destination as? AuthViewController {
             vc.segueToLeaveReview = true
@@ -131,8 +156,8 @@ class NewController: UIViewController {
         btnWriteReview.layer.cornerRadius = 5
         
         // button background color
-        btnSeeReviews.backgroundColor = .systemBlue
-        btnSeeReviews.layer.cornerRadius = 5
+        btnLoadMoreReviews.backgroundColor = .systemBlue
+        btnLoadMoreReviews.layer.cornerRadius = 5
         
         
         
@@ -258,22 +283,18 @@ class NewController: UIViewController {
                 self.displayedRatingNum.text = String(format: "%.1f", avgRatingOverall)
                 self.displayedNumReviews.text = "(" + String(numRatings) + ")"
                 
-                // MARK: display 3 reviews
-                var counter = 0
-                while counter < 3 && counter < self.textReviews.count {
-                    print("counter: \(counter)")
+                // MARK: display initial reviews
+                while self.numReviewsLoaded < self.NUM_REVIEWS_TO_DISPLAY_DEFAULT && self.numReviewsLoaded < self.textReviews.count {
                     let r = Review()
-                    r.reviewText.text = self.textReviews[counter]
+                    r.reviewText.text = self.textReviews[self.numReviewsLoaded]
                     self.reviewStack.addArrangedSubview(r)
                     
+                    // constraints
                     r.translatesAutoresizingMaskIntoConstraints = false
                     let horizontalConstraint = r.centerXAnchor.constraint(equalTo: self.view.centerXAnchor)
                     NSLayoutConstraint.activate([horizontalConstraint])
 
-
-
-                    
-                    counter += 1
+                    self.numReviewsLoaded += 1
                 }
 
             }

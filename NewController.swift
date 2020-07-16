@@ -261,6 +261,14 @@ class NewController: UIViewController {
                     let r = Review()
                     r.reviewText.text = self.textReviews[counter]
                     self.reviewStack.addArrangedSubview(r)
+                    
+                    r.translatesAutoresizingMaskIntoConstraints = false
+                    let horizontalConstraint = r.centerXAnchor.constraint(equalTo: self.view.centerXAnchor)
+                    NSLayoutConstraint.activate([horizontalConstraint])
+
+
+
+                    
                     counter += 1
                 }
 

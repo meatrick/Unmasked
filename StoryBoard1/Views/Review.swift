@@ -41,7 +41,7 @@ class Review: UIView {
     }
     
     override var intrinsicContentSize: CGSize {
-        return CGSize(width: 334, height: 250)
+        return CGSize(width: 350, height: 175)
         // if using in, say, a vertical stack view, the width is ignored
     }
 

@@ -107,39 +107,6 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="(number of ratings)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jla-0K-nGw">
-                                                <rect key="frame" x="112" y="308" width="110.66666666666669" height="21"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6eF-ts-IuF">
-                                                <rect key="frame" x="12" y="8" width="23" height="22"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="23" id="Iqb-U4-IDU"/>
-                                                </constraints>
-                                                <state key="normal" image="xmark" catalog="system"/>
-                                                <connections>
-                                                    <segue destination="VM8-3x-vxt" kind="unwind" unwindAction="myUnwindActionWithUnwindSegue:" id="bHq-b3-zvX"/>
-                                                </connections>
-                                            </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Business Status" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5HR-9P-sWp">
-                                                <rect key="frame" x="8" y="348" width="359" height="15.666666666666686"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5bk-UI-9Qo">
-                                                <rect key="frame" x="8" y="817" width="359" height="38"/>
-                                                <inset key="contentEdgeInsets" minX="150" minY="10" maxX="150" maxY="10"/>
-                                                <inset key="titleEdgeInsets" minX="-50" minY="0.0" maxX="-50" maxY="0.0"/>
-                                                <state key="normal" title="Load More Reviews">
-                                                    <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="btnLoadMoreReviews:" destination="8tB-hT-vYa" eventType="touchUpInside" id="hah-sy-pid"/>
-                                                </connections>
-                                            </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ahz-X2-e29" userLabel="Overall">
                                                 <rect key="frame" x="8" y="416" width="359" height="20.333333333333314"/>
                                                 <subviews>
@@ -292,6 +259,28 @@
                                                     <constraint firstItem="nMs-jw-XFT" firstAttribute="leading" secondItem="JoA-A1-7Jt" secondAttribute="leading" constant="249" id="wit-8Y-wYM"/>
                                                 </constraints>
                                             </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="(number of ratings)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jla-0K-nGw">
+                                                <rect key="frame" x="112" y="308" width="110.66666666666669" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6eF-ts-IuF">
+                                                <rect key="frame" x="12" y="8" width="23" height="22"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="23" id="Iqb-U4-IDU"/>
+                                                </constraints>
+                                                <state key="normal" image="xmark" catalog="system"/>
+                                                <connections>
+                                                    <segue destination="VM8-3x-vxt" kind="unwind" unwindAction="myUnwindActionWithUnwindSegue:" id="bHq-b3-zvX"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Business Status" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5HR-9P-sWp">
+                                                <rect key="frame" x="8" y="348" width="359" height="15.666666666666686"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="se7-HP-QNf">
                                                 <rect key="frame" x="8" y="630" width="359" height="143"/>
                                             </stackView>
@@ -337,6 +326,20 @@
                                                     <constraint firstAttribute="trailing" secondItem="P1H-Di-zev" secondAttribute="trailing" id="xJ0-ji-RtI"/>
                                                 </constraints>
                                             </view>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5bk-UI-9Qo">
+                                                <rect key="frame" x="8" y="817" width="359" height="38"/>
+                                                <inset key="contentEdgeInsets" minX="150" minY="10" maxX="150" maxY="10"/>
+                                                <inset key="titleEdgeInsets" minX="-50" minY="0.0" maxX="-50" maxY="0.0"/>
+                                                <state key="normal" title="Load More Reviews">
+                                                    <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="btnLoadMoreReviews:" destination="8tB-hT-vYa" eventType="touchUpInside" id="hah-sy-pid"/>
+                                                </connections>
+                                            </button>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="50M-lV-KN7">
+                                                <rect key="frame" x="8" y="367" width="359" height="22"/>
+                                            </imageView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
@@ -359,6 +362,7 @@
                                             <constraint firstItem="p99-YR-pwi" firstAttribute="centerX" secondItem="CPz-2s-npS" secondAttribute="centerX" id="GH8-gf-FdY"/>
                                             <constraint firstItem="pNg-Td-SE6" firstAttribute="centerX" secondItem="CPz-2s-npS" secondAttribute="centerX" constant="-1" id="IAW-XT-3gn"/>
                                             <constraint firstItem="Ahz-X2-e29" firstAttribute="leading" secondItem="CPz-2s-npS" secondAttribute="leading" constant="8" id="IKt-ur-L3a"/>
+                                            <constraint firstAttribute="trailing" secondItem="50M-lV-KN7" secondAttribute="trailing" constant="8" id="JWv-X6-FbW"/>
                                             <constraint firstItem="AhL-bi-S25" firstAttribute="centerY" secondItem="16H-Uk-6G5" secondAttribute="centerY" id="Kov-mR-RZP"/>
                                             <constraint firstItem="5HR-9P-sWp" firstAttribute="leading" secondItem="CPz-2s-npS" secondAttribute="leading" constant="8" id="Lku-6Q-j0k"/>
                                             <constraint firstItem="sn3-bc-eI1" firstAttribute="top" secondItem="0e9-t8-gU7" secondAttribute="bottom" constant="8" id="MTh-ol-wrm"/>
@@ -373,6 +377,7 @@
                                             <constraint firstItem="JoA-A1-7Jt" firstAttribute="leading" secondItem="CPz-2s-npS" secondAttribute="leading" constant="8" id="UdI-Wu-LXi"/>
                                             <constraint firstAttribute="trailing" secondItem="sn3-bc-eI1" secondAttribute="trailing" constant="8" id="VEE-ER-CWh"/>
                                             <constraint firstItem="se7-HP-QNf" firstAttribute="top" secondItem="pNg-Td-SE6" secondAttribute="bottom" constant="8" id="W6F-vE-wUT"/>
+                                            <constraint firstItem="50M-lV-KN7" firstAttribute="leading" secondItem="CPz-2s-npS" secondAttribute="leading" constant="8" id="WLn-py-mi7"/>
                                             <constraint firstItem="p99-YR-pwi" firstAttribute="top" secondItem="CPz-2s-npS" secondAttribute="top" id="Z5l-Ea-c7E"/>
                                             <constraint firstItem="16H-Uk-6G5" firstAttribute="top" secondItem="dJR-8d-7bU" secondAttribute="bottom" constant="-2.3333333333333144" id="bb4-wT-qS7"/>
                                             <constraint firstAttribute="trailing" secondItem="5bk-UI-9Qo" secondAttribute="trailing" constant="8" id="bfR-Yn-Kaa"/>
@@ -391,6 +396,8 @@
                                             <constraint firstItem="JoA-A1-7Jt" firstAttribute="top" secondItem="Fa5-y0-XUz" secondAttribute="bottom" constant="8" id="kYv-gt-4YE"/>
                                             <constraint firstAttribute="trailing" secondItem="Fa5-y0-XUz" secondAttribute="trailing" constant="8" id="msa-gM-Vph"/>
                                             <constraint firstItem="sn3-bc-eI1" firstAttribute="leading" secondItem="CPz-2s-npS" secondAttribute="leading" constant="8" id="oTr-eL-LOa"/>
+                                            <constraint firstItem="50M-lV-KN7" firstAttribute="top" secondItem="5HR-9P-sWp" secondAttribute="bottom" constant="3.3300000000000001" id="pPT-6J-4Ug"/>
+                                            <constraint firstItem="Ahz-X2-e29" firstAttribute="top" secondItem="50M-lV-KN7" secondAttribute="bottom" constant="3.3300000000000001" id="sKd-1g-V0h"/>
                                             <constraint firstItem="0e9-t8-gU7" firstAttribute="leading" secondItem="CPz-2s-npS" secondAttribute="leading" constant="8" id="uFU-5d-94V"/>
                                             <constraint firstItem="pNg-Td-SE6" firstAttribute="centerX" secondItem="CPz-2s-npS" secondAttribute="centerX" constant="-1" id="zhI-7L-grI"/>
                                         </constraints>
@@ -431,6 +438,7 @@
                         <outlet property="displayedNumReviews" destination="Jla-0K-nGw" id="fHC-Jh-kjh"/>
                         <outlet property="displayedRatingNum" destination="16H-Uk-6G5" id="cvD-r2-9Tr"/>
                         <outlet property="displayedStars" destination="AhL-bi-S25" id="Mkw-xe-bQA"/>
+                        <outlet property="googleAttribution" destination="50M-lV-KN7" id="e4M-1v-TuM"/>
                         <outlet property="reviewStack" destination="se7-HP-QNf" id="rf9-zQ-fwG"/>
                         <outlet property="starsConvenience" destination="P1H-Di-zev" id="Q5N-z1-wQB"/>
                         <outlet property="starsDistancing" destination="Gzc-s5-XwA" id="6Nd-Gi-HFp"/>

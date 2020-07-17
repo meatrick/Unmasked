@@ -35,6 +35,7 @@ class NewController: UIViewController {
     @IBOutlet weak var btnWriteReview: UIButton!
     @IBOutlet weak var btnLoadMoreReviews: UIButton!
     @IBOutlet weak var reviewStack: UIStackView!
+    @IBOutlet weak var googleAttribution: UIImageView!
     
     
     var placeID: String?
@@ -159,7 +160,8 @@ class NewController: UIViewController {
         btnLoadMoreReviews.backgroundColor = .systemBlue
         btnLoadMoreReviews.layer.cornerRadius = 5
         
-        
+        // google attr.
+        googleAttribution.image = UIImage(named: "googleAttributionOnWhite")
         
         // Update UI with POI info
         POIName.text = place.name

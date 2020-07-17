@@ -36,6 +36,8 @@ class NewController: UIViewController {
     @IBOutlet weak var btnLoadMoreReviews: UIButton!
     @IBOutlet weak var reviewStack: UIStackView!
     @IBOutlet weak var googleAttribution: UIImageView!
+    @IBOutlet weak var photoAttribution: UITextView!
+    @IBOutlet weak var listingAttribution: UITextView!
     
     
     var placeID: String?
@@ -163,6 +165,15 @@ class NewController: UIViewController {
         // google attr.
         googleAttribution.image = UIImage(named: "googleAttributionOnWhite")
         
+        photoAttribution.textContainer.widthTracksTextView = true
+        photoAttribution.isScrollEnabled = false
+        
+        if place.attributions != nil {
+            listingAttribution.attributedText = place.attributions
+        } else {
+            listingAttribution.isHidden = true
+        }
+        
         // Update UI with POI info
         POIName.text = place.name
         POIName.font = UIFont.boldSystemFont(ofSize: 17.0)
@@ -211,7 +222,12 @@ class NewController: UIViewController {
           } else {
             // Display the first image and its attributions.
             self.POIImage?.image = photo;
-//            self.lblText?.attributedText = photoMetadata.attributions;
+            self.photoAttribution?.attributedText = photoMetadata.attributions;
+            if (self.photoAttribution?.attributedText.length)! > 0 {
+                self.photoAttribution.isHidden = false
+            }
+            
+//            self.photoAttribution?.attributedText = NSAttributedString(string: "test")
           }
         })
         

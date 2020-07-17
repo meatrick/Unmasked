@@ -108,7 +108,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ahz-X2-e29" userLabel="Overall">
-                                                <rect key="frame" x="8" y="416" width="359" height="20.333333333333314"/>
+                                                <rect key="frame" x="8" y="416.33333333333331" width="359" height="20.333333333333314"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Overall" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="miQ-ij-8aB">
                                                         <rect key="frame" x="0.0" y="0.0" width="53.666666666666664" height="20.333333333333332"/>
@@ -138,7 +138,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0e9-t8-gU7" userLabel="Cat 1">
-                                                <rect key="frame" x="8" y="444.33333333333331" width="359" height="21"/>
+                                                <rect key="frame" x="8" y="444.66666666666669" width="359" height="21"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Employee Protective Wear" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I9i-O1-gnf">
                                                         <rect key="frame" x="0.0" y="0.0" width="201" height="21"/>
@@ -169,7 +169,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sn3-bc-eI1" userLabel="Cat 2">
-                                                <rect key="frame" x="8" y="473.33333333333331" width="359" height="20.333333333333314"/>
+                                                <rect key="frame" x="8" y="473.66666666666669" width="359" height="20.333333333333314"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Patron Protective Wear" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JD6-cB-c13">
                                                         <rect key="frame" x="0.0" y="0.0" width="176" height="21"/>
@@ -200,7 +200,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fa5-y0-XUz" userLabel="Cat 3">
-                                                <rect key="frame" x="8" y="501.66666666666669" width="359" height="20.333333333333314"/>
+                                                <rect key="frame" x="8" y="501.99999999999994" width="359" height="20.333333333333314"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Social Distancing" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aa8-9c-QLe">
                                                         <rect key="frame" x="0.0" y="0.0" width="132" height="21"/>
@@ -230,7 +230,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JoA-A1-7Jt" userLabel="Cat 4">
-                                                <rect key="frame" x="8" y="530" width="359" height="18.333333333333371"/>
+                                                <rect key="frame" x="8" y="530.33333333333337" width="359" height="18.333333333333371"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="General Sanitization" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JRt-CE-z60">
                                                         <rect key="frame" x="0.0" y="0.0" width="153" height="21"/>
@@ -275,8 +275,8 @@
                                                     <segue destination="VM8-3x-vxt" kind="unwind" unwindAction="myUnwindActionWithUnwindSegue:" id="bHq-b3-zvX"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Business Status" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5HR-9P-sWp">
-                                                <rect key="frame" x="8" y="348" width="359" height="15.666666666666686"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" misplaced="YES" text="Business Status" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5HR-9P-sWp">
+                                                <rect key="frame" x="8" y="348" width="141" height="16"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -285,7 +285,7 @@
                                                 <rect key="frame" x="8" y="630" width="359" height="143"/>
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pNg-Td-SE6">
-                                                <rect key="frame" x="8" y="584.66666666666663" width="357" height="38"/>
+                                                <rect key="frame" x="8" y="585" width="357" height="38"/>
                                                 <inset key="contentEdgeInsets" minX="125" minY="10" maxX="125" maxY="10"/>
                                                 <inset key="titleEdgeInsets" minX="-50" minY="0.0" maxX="-50" maxY="0.0"/>
                                                 <state key="normal" title="Leave A Review">
@@ -297,7 +297,7 @@
                                                 </connections>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ve8-pU-UvD" userLabel="Cat 5">
-                                                <rect key="frame" x="8" y="556.33333333333337" width="359" height="20.333333333333371"/>
+                                                <rect key="frame" x="8" y="556.66666666666663" width="359" height="20.333333333333371"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Convenience" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="knS-Df-2I0">
                                                         <rect key="frame" x="0.0" y="0.0" width="100" height="21"/>
@@ -340,6 +340,24 @@
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="50M-lV-KN7">
                                                 <rect key="frame" x="8" y="367" width="359" height="22"/>
                                             </imageView>
+                                            <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="PYj-be-fed">
+                                                <rect key="frame" x="0.0" y="248" width="122" height="32"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
+                                            </textView>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="75P-48-ANe">
+                                                <rect key="frame" x="183" y="344" width="182" height="20"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
+                                            </textView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
@@ -439,6 +457,8 @@
                         <outlet property="displayedRatingNum" destination="16H-Uk-6G5" id="cvD-r2-9Tr"/>
                         <outlet property="displayedStars" destination="AhL-bi-S25" id="Mkw-xe-bQA"/>
                         <outlet property="googleAttribution" destination="50M-lV-KN7" id="e4M-1v-TuM"/>
+                        <outlet property="listingAttribution" destination="75P-48-ANe" id="Eqr-cN-Nmp"/>
+                        <outlet property="photoAttribution" destination="PYj-be-fed" id="m4y-WF-8ss"/>
                         <outlet property="reviewStack" destination="se7-HP-QNf" id="rf9-zQ-fwG"/>
                         <outlet property="starsConvenience" destination="P1H-Di-zev" id="Q5N-z1-wQB"/>
                         <outlet property="starsDistancing" destination="Gzc-s5-XwA" id="6Nd-Gi-HFp"/>
